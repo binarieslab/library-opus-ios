@@ -50,9 +50,14 @@
 		C0169A3628DCEDF30078B17E /* OggHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808028D8E70300087586 /* OggHelper.m */; };
 		C0169A3728DCEDF60078B17E /* OpusHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807F28D8E70300087586 /* OpusHelper.h */; };
 		C0169A3828DCEDF90078B17E /* OpusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808128D8E70300087586 /* OpusHelper.m */; };
+		C0169A3B28DCF2B10078B17E /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0169A3A28DCF2990078B17E /* libogg.a */; };
+		C0169A3C28DCF2B10078B17E /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0169A3928DCF2990078B17E /* libopus.a */; };
+		C0169A3D28DCF2B60078B17E /* opus_header.c in Sources */ = {isa = PBXBuildFile; fileRef = C047871F28D8F4CE007DC2DE /* opus_header.c */; };
+		C0169A3E28DCF2B90078B17E /* OggHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807E28D8E70300087586 /* OggHelper.h */; };
+		C0169A3F28DCF2BB0078B17E /* OggHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808028D8E70300087586 /* OggHelper.m */; };
+		C0169A4028DCF2BE0078B17E /* OpusHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807F28D8E70300087586 /* OpusHelper.h */; };
+		C0169A4128DCF2C10078B17E /* OpusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808128D8E70300087586 /* OpusHelper.m */; };
 		C047872028D8F4CE007DC2DE /* opus_header.c in Sources */ = {isa = PBXBuildFile; fileRef = C047871F28D8F4CE007DC2DE /* opus_header.c */; };
-		C047872928D8FF13007DC2DE /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C094807928D8E4DE00087586 /* libogg.a */; };
-		C047872A28D8FF13007DC2DE /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C094807A28D8E4E900087586 /* libopus.a */; };
 		C094808228D8E70300087586 /* OggHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807E28D8E70300087586 /* OggHelper.h */; };
 		C094808328D8E70300087586 /* OpusHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807F28D8E70300087586 /* OpusHelper.h */; };
 		C094808428D8E70300087586 /* OggHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808028D8E70300087586 /* OggHelper.m */; };
@@ -238,13 +243,9 @@
 		8B20C01828A53048000832FA /* lib_opus_macosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lib_opus_macosTests.swift; sourceTree = "<group>"; };
 		C0169A3028DCEDB20078B17E /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = "lib-opus/ressources/watchOS/libogg.a"; sourceTree = "<group>"; };
 		C0169A3128DCEDB20078B17E /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus.a; path = "lib-opus/ressources/watchOS/libopus.a"; sourceTree = "<group>"; };
+		C0169A3928DCF2990078B17E /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus.a; path = "lib-opus/ressources/macOS/libopus.a"; sourceTree = "<group>"; };
+		C0169A3A28DCF2990078B17E /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = "lib-opus/ressources/macOS/libogg.a"; sourceTree = "<group>"; };
 		C047871F28D8F4CE007DC2DE /* opus_header.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = opus_header.c; sourceTree = "<group>"; };
-		C047872128D8FCD1007DC2DE /* libogg_device.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg_device.a; path = "lib-opus/iOS/ressources/libogg_device.a"; sourceTree = "<group>"; };
-		C047872228D8FCD1007DC2DE /* libogg_simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg_simulator.a; path = "lib-opus/iOS/ressources/libogg_simulator.a"; sourceTree = "<group>"; };
-		C047872328D8FCD1007DC2DE /* libopus_simulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus_simulator.a; path = "lib-opus/iOS/ressources/libopus_simulator.a"; sourceTree = "<group>"; };
-		C047872428D8FCD1007DC2DE /* libopus_device.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus_device.a; path = "lib-opus/iOS/ressources/libopus_device.a"; sourceTree = "<group>"; };
-		C094807928D8E4DE00087586 /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = "lib-opus/iOS/ressources/libogg.a"; sourceTree = "<group>"; };
-		C094807A28D8E4E900087586 /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus.a; path = "lib-opus/iOS/ressources/libopus.a"; sourceTree = "<group>"; };
 		C094807E28D8E70300087586 /* OggHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OggHelper.h; sourceTree = "<group>"; };
 		C094807F28D8E70300087586 /* OpusHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpusHelper.h; sourceTree = "<group>"; };
 		C094808028D8E70300087586 /* OggHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OggHelper.m; sourceTree = "<group>"; };
@@ -289,8 +290,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C047872A28D8FF13007DC2DE /* libopus.a in Frameworks */,
-				C047872928D8FF13007DC2DE /* libogg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +313,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0169A3C28DCF2B10078B17E /* libopus.a in Frameworks */,
+				C0169A3B28DCF2B10078B17E /* libogg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,14 +467,10 @@
 		C094807828D8E4DE00087586 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0169A3A28DCF2990078B17E /* libogg.a */,
+				C0169A3928DCF2990078B17E /* libopus.a */,
 				C0169A3028DCEDB20078B17E /* libogg.a */,
 				C0169A3128DCEDB20078B17E /* libopus.a */,
-				C047872128D8FCD1007DC2DE /* libogg_device.a */,
-				C047872228D8FCD1007DC2DE /* libogg_simulator.a */,
-				C047872428D8FCD1007DC2DE /* libopus_device.a */,
-				C047872328D8FCD1007DC2DE /* libopus_simulator.a */,
-				C094807A28D8E4E900087586 /* libopus.a */,
-				C094807928D8E4DE00087586 /* libogg.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -524,7 +521,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0169A3E28DCF2B90078B17E /* OggHelper.h in Headers */,
 				8B20C01A28A53048000832FA /* lib_opus_macos.h in Headers */,
+				C0169A4028DCF2BE0078B17E /* OpusHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +943,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B20C00C28A53048000832FA /* lib_opus_macos.docc in Sources */,
+				C0169A3F28DCF2BB0078B17E /* OggHelper.m in Sources */,
+				C0169A4128DCF2C10078B17E /* OpusHelper.m in Sources */,
+				C0169A3D28DCF2B60078B17E /* opus_header.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
