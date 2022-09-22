@@ -100,7 +100,7 @@ void writeString(unsigned char *dest, int offset, unsigned char *value, int leng
     writeShort(opusHeader, offset + 16, 0);
     // Mapping Family (For channel mapping family 0, this value defaults to C-1 (i.e., 0 for mono and 1 for stereo), and is not coded.)
     opusHeader[offset + 18] = 0;
-
+    
     ogg_packet opusHeaderPacket;
     opusHeaderPacket.packet = opusHeader;
     opusHeaderPacket.bytes = headerSize;
@@ -116,7 +116,7 @@ void writeString(unsigned char *dest, int offset, unsigned char *value, int leng
     [newData appendBytes:oggPage.body length:oggPage.body_len];
     offset = 0;
     NSString *comments = @"libopus";
-
+    
     int commentsLength = (int)[comments lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
     unsigned char opusComments[commentsLength + 28];
     writeString(opusComments, offset, (unsigned char *)"OpusTags", 8);
@@ -168,7 +168,7 @@ void writeString(unsigned char *dest, int offset, unsigned char *value, int leng
     packet.granulepos = granulePos;
     packet.packetno = packetCount++;
     ogg_stream_packetin(&streamState, &packet);
-
+    
     if (ogg_stream_pageout(&streamState, &oggPage)) {
         NSMutableData *newData = [NSMutableData new];
         [newData appendBytes:oggPage.header length:oggPage.header_len];
