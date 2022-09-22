@@ -116,12 +116,12 @@
     if (encodedByteCount < 0) {
         return nil;
     }
-
+    
     // Opus data initialized with size in the first byte
     NSMutableData *outputData = [[NSMutableData alloc] initWithCapacity:frameSize*2];
     // Append Opus data
     [outputData appendData:[NSData dataWithBytes:outBuffer length:encodedByteCount]];
-
+    
     return outputData;
 }
 
@@ -338,7 +338,7 @@ static OpusMSDecoder *process_header(ogg_packet *op, opus_int32 *rate, int *mapp
     *mapping_family = header.channel_mapping;
     *channels = header.channels;
     
-
+    
     if(!*rate)*rate=header.input_sample_rate;
     /*If the rate is unspecified we decode to 48000*/
     if(*rate==0)*rate=48000;
@@ -346,10 +346,10 @@ static OpusMSDecoder *process_header(ogg_packet *op, opus_int32 *rate, int *mapp
         fprintf(stderr,"Warning: Crazy input_rate %d, decoding to 48000 instead.\n",*rate);
         *rate=48000;
     }
-
+    
     if(header.input_sample_rate != *rate)
         fprintf(stderr, "\n\n\n*** Sample rate detected: %d, using: %d ***\n\n\n", header.input_sample_rate, *rate);
-
+    
     *preskip = header.preskip;
     st = opus_multistream_decoder_create(48000, header.channels, header.nb_streams, header.nb_coupled, header.stream_map, &err);
     if(err != OPUS_OK){
@@ -368,7 +368,7 @@ static OpusMSDecoder *process_header(ogg_packet *op, opus_int32 *rate, int *mapp
     
     if(header.version!=1)fprintf(stderr, ", Header v%d",header.version);
     fprintf(stderr, "\n");
-
+    
     if (header.gain!=0)
         fprintf(stderr,"Playback gain: %f dB\n", header.gain/256.);
     
