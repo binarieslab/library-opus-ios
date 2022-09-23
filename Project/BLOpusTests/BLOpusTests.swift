@@ -1,14 +1,14 @@
 //
-//  lib_opus_watchosTests.swift
-//  lib-opus-watchosTests
+//  BLOpusTests.swift
+//  BLOpusTests
 //
-//  Created by Sarquis, Marcelo [CBC] on 14.08.22.
+//  Created by Marcelo Sarquis on 22.09.22.
 //
 
 import XCTest
-@testable import lib_opus_watchos
+@testable import BLOpus
 
-class lib_opus_watchosTests: XCTestCase {
+class BLOpusTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

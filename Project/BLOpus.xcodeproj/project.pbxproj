@@ -3,865 +3,233 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8B16818328A95D4200281987 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B16818128A95D4200281987 /* Interface.storyboard */; };
-		8B16818528A95D4300281987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B16818428A95D4300281987 /* Assets.xcassets */; };
-		8B16818B28A95D4300281987 /* BLOpus watchOS WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8B16818A28A95D4300281987 /* BLOpus watchOS WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8B16819028A95D4300281987 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B16818F28A95D4300281987 /* InterfaceController.swift */; };
-		8B16819228A95D4300281987 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B16819128A95D4300281987 /* ExtensionDelegate.swift */; };
-		8B16819428A95D4300281987 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B16819328A95D4300281987 /* ComplicationController.swift */; };
-		8B16819628A95D4400281987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B16819528A95D4400281987 /* Assets.xcassets */; };
-		8B16819A28A95D4400281987 /* BLOpus watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8B16817F28A95D4200281987 /* BLOpus watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		8B1681AC28A95D7800281987 /* lib_opus_watchos.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8B1681AB28A95D7800281987 /* lib_opus_watchos.docc */; };
-		8B1681B228A95D7800281987 /* lib_opus_watchos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1681A828A95D7800281987 /* lib_opus_watchos.framework */; };
-		8B1681B928A95D7800281987 /* lib_opus_watchosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1681B828A95D7800281987 /* lib_opus_watchosTests.swift */; };
-		8B1681BA28A95D7800281987 /* lib_opus_watchos.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B1681AA28A95D7800281987 /* lib_opus_watchos.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B1681BD28A95D7800281987 /* lib_opus_watchos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1681A828A95D7800281987 /* lib_opus_watchos.framework */; };
-		8B1681BE28A95D7800281987 /* lib_opus_watchos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1681A828A95D7800281987 /* lib_opus_watchos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8B20BFBA28A52FB8000832FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20BFB928A52FB8000832FA /* AppDelegate.swift */; };
-		8B20BFBC28A52FB8000832FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20BFBB28A52FB8000832FA /* SceneDelegate.swift */; };
-		8B20BFBE28A52FB8000832FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20BFBD28A52FB8000832FA /* ViewController.swift */; };
-		8B20BFC128A52FB8000832FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B20BFBF28A52FB8000832FA /* Main.storyboard */; };
-		8B20BFC328A52FBA000832FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B20BFC228A52FBA000832FA /* Assets.xcassets */; };
-		8B20BFC628A52FBA000832FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B20BFC428A52FBA000832FA /* LaunchScreen.storyboard */; };
-		8B20BFD628A52FEE000832FA /* lib_opus_ios.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8B20BFD528A52FEE000832FA /* lib_opus_ios.docc */; };
-		8B20BFDC28A52FEE000832FA /* lib_opus_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B20BFD228A52FEE000832FA /* lib_opus_ios.framework */; };
-		8B20BFE328A52FEE000832FA /* lib_opus_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20BFE228A52FEE000832FA /* lib_opus_iosTests.swift */; };
-		8B20BFE428A52FEE000832FA /* lib_opus_ios.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B20BFD428A52FEE000832FA /* lib_opus_ios.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B20BFE728A52FEE000832FA /* lib_opus_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B20BFD228A52FEE000832FA /* lib_opus_ios.framework */; };
-		8B20BFE828A52FEF000832FA /* lib_opus_ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B20BFD228A52FEE000832FA /* lib_opus_ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8B20BFF728A53037000832FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20BFF628A53037000832FA /* AppDelegate.swift */; };
-		8B20BFF928A53037000832FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20BFF828A53037000832FA /* ViewController.swift */; };
-		8B20BFFB28A53039000832FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B20BFFA28A53039000832FA /* Assets.xcassets */; };
-		8B20BFFE28A53039000832FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B20BFFC28A53039000832FA /* Main.storyboard */; };
-		8B20C00C28A53048000832FA /* lib_opus_macos.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8B20C00B28A53048000832FA /* lib_opus_macos.docc */; };
-		8B20C01228A53048000832FA /* lib_opus_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B20C00828A53048000832FA /* lib_opus_macos.framework */; };
-		8B20C01928A53048000832FA /* lib_opus_macosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B20C01828A53048000832FA /* lib_opus_macosTests.swift */; };
-		8B20C01A28A53048000832FA /* lib_opus_macos.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B20C00A28A53048000832FA /* lib_opus_macos.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B20C01D28A53048000832FA /* lib_opus_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B20C00828A53048000832FA /* lib_opus_macos.framework */; };
-		8B20C01E28A53048000832FA /* lib_opus_macos.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8B20C00828A53048000832FA /* lib_opus_macos.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C0169A3228DCEDCB0078B17E /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0169A3028DCEDB20078B17E /* libogg.a */; };
-		C0169A3328DCEDCB0078B17E /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0169A3128DCEDB20078B17E /* libopus.a */; };
-		C0169A3428DCEDEB0078B17E /* opus_header.c in Sources */ = {isa = PBXBuildFile; fileRef = C047871F28D8F4CE007DC2DE /* opus_header.c */; };
-		C0169A3528DCEDEF0078B17E /* OggHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807E28D8E70300087586 /* OggHelper.h */; };
-		C0169A3628DCEDF30078B17E /* OggHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808028D8E70300087586 /* OggHelper.m */; };
-		C0169A3728DCEDF60078B17E /* OpusHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807F28D8E70300087586 /* OpusHelper.h */; };
-		C0169A3828DCEDF90078B17E /* OpusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808128D8E70300087586 /* OpusHelper.m */; };
-		C0169A3B28DCF2B10078B17E /* libogg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0169A3A28DCF2990078B17E /* libogg.a */; };
-		C0169A3C28DCF2B10078B17E /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0169A3928DCF2990078B17E /* libopus.a */; };
-		C0169A3D28DCF2B60078B17E /* opus_header.c in Sources */ = {isa = PBXBuildFile; fileRef = C047871F28D8F4CE007DC2DE /* opus_header.c */; };
-		C0169A3E28DCF2B90078B17E /* OggHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807E28D8E70300087586 /* OggHelper.h */; };
-		C0169A3F28DCF2BB0078B17E /* OggHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808028D8E70300087586 /* OggHelper.m */; };
-		C0169A4028DCF2BE0078B17E /* OpusHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807F28D8E70300087586 /* OpusHelper.h */; };
-		C0169A4128DCF2C10078B17E /* OpusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808128D8E70300087586 /* OpusHelper.m */; };
-		C047872028D8F4CE007DC2DE /* opus_header.c in Sources */ = {isa = PBXBuildFile; fileRef = C047871F28D8F4CE007DC2DE /* opus_header.c */; };
-		C094808228D8E70300087586 /* OggHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807E28D8E70300087586 /* OggHelper.h */; };
-		C094808328D8E70300087586 /* OpusHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C094807F28D8E70300087586 /* OpusHelper.h */; };
-		C094808428D8E70300087586 /* OggHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808028D8E70300087586 /* OggHelper.m */; };
-		C094808528D8E70300087586 /* OpusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C094808128D8E70300087586 /* OpusHelper.m */; };
+		C08FA3D328DCF8FB00BFB1BA /* BLOpus.docc in Sources */ = {isa = PBXBuildFile; fileRef = C08FA3D228DCF8FB00BFB1BA /* BLOpus.docc */; };
+		C08FA3D928DCF8FB00BFB1BA /* BLOpus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FA3CE28DCF8FB00BFB1BA /* BLOpus.framework */; };
+		C08FA3DE28DCF8FB00BFB1BA /* BLOpusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08FA3DD28DCF8FB00BFB1BA /* BLOpusTests.swift */; };
+		C08FA3DF28DCF8FB00BFB1BA /* BLOpus.h in Headers */ = {isa = PBXBuildFile; fileRef = C08FA3D128DCF8FB00BFB1BA /* BLOpus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C08FA3F728DCFABB00BFB1BA /* OggHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C08FA3F228DCFABB00BFB1BA /* OggHelper.m */; };
+		C08FA3F828DCFABB00BFB1BA /* opus_header.c in Sources */ = {isa = PBXBuildFile; fileRef = C08FA3F328DCFABB00BFB1BA /* opus_header.c */; };
+		C08FA3F928DCFABB00BFB1BA /* OggHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C08FA3F428DCFABB00BFB1BA /* OggHelper.h */; };
+		C08FA3FA28DCFABB00BFB1BA /* OpusHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C08FA3F528DCFABB00BFB1BA /* OpusHelper.h */; };
+		C08FA3FB28DCFABB00BFB1BA /* OpusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C08FA3F628DCFABB00BFB1BA /* OpusHelper.m */; };
+		C08FA40428DCFD2E00BFB1BA /* libogg-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FA40128DCFD0200BFB1BA /* libogg-ios.a */; platformFilter = ios; };
+		C08FA40528DCFD2E00BFB1BA /* libogg-macos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FA3FF28DCFD0200BFB1BA /* libogg-macos.a */; platformFilters = (macos, ); };
+		C08FA40628DCFD2E00BFB1BA /* libogg-watchos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FA40028DCFD0200BFB1BA /* libogg-watchos.a */; platformFilters = (watchos, ); };
+		C08FA40728DCFD2E00BFB1BA /* libopus-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FA40328DCFD0300BFB1BA /* libopus-ios.a */; platformFilter = ios; };
+		C08FA40828DCFD2E00BFB1BA /* libopus-macos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FA40228DCFD0200BFB1BA /* libopus-macos.a */; platformFilters = (macos, ); };
+		C08FA40928DCFD2E00BFB1BA /* libopus-watchos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C08FA3FE28DCFD0200BFB1BA /* libopus-watchos.a */; platformFilters = (watchos, ); };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8B16818C28A95D4300281987 /* PBXContainerItemProxy */ = {
+		C08FA3DA28DCF8FB00BFB1BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
+			containerPortal = C08FA3C528DCF8FB00BFB1BA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8B16818928A95D4300281987;
-			remoteInfo = "BLOpus watchOS WatchKit Extension";
-		};
-		8B16819828A95D4400281987 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B16817E28A95D4200281987;
-			remoteInfo = "BLOpus watchOS";
-		};
-		8B1681B328A95D7800281987 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B1681A728A95D7800281987;
-			remoteInfo = "lib-opus-watchos";
-		};
-		8B1681B528A95D7800281987 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B16818928A95D4300281987;
-			remoteInfo = "BLOpus watchOS WatchKit Extension";
-		};
-		8B1681BB28A95D7800281987 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B1681A728A95D7800281987;
-			remoteInfo = "lib-opus-watchos";
-		};
-		8B20BFDD28A52FEE000832FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B20BFD128A52FEE000832FA;
-			remoteInfo = "lib-opus-ios";
-		};
-		8B20BFDF28A52FEE000832FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B20BFB528A52FB8000832FA;
+			remoteGlobalIDString = C08FA3CD28DCF8FB00BFB1BA;
 			remoteInfo = BLOpus;
-		};
-		8B20BFE528A52FEE000832FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B20BFD128A52FEE000832FA;
-			remoteInfo = "lib-opus-ios";
-		};
-		8B20C01328A53048000832FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B20C00728A53048000832FA;
-			remoteInfo = "lib-opus-macos";
-		};
-		8B20C01528A53048000832FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B20BFF328A53037000832FA;
-			remoteInfo = "BLOpus macOS";
-		};
-		8B20C01B28A53048000832FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8B20BFAE28A52FB8000832FA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8B20C00728A53048000832FA;
-			remoteInfo = "lib-opus-macos";
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8B16819B28A95D4400281987 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				8B16819A28A95D4400281987 /* BLOpus watchOS.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B16819E28A95D4400281987 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				8B16818B28A95D4300281987 /* BLOpus watchOS WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B1681C228A95D7800281987 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8B1681BE28A95D7800281987 /* lib_opus_watchos.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFEC28A52FEF000832FA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8B20BFE828A52FEF000832FA /* lib_opus_ios.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20C02228A53048000832FA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8B20C01E28A53048000832FA /* lib_opus_macos.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		8B16817F28A95D4200281987 /* BLOpus watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLOpus watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B16818228A95D4200281987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		8B16818428A95D4300281987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B16818A28A95D4300281987 /* BLOpus watchOS WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BLOpus watchOS WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B16818F28A95D4300281987 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		8B16819128A95D4300281987 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		8B16819328A95D4300281987 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		8B16819528A95D4400281987 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B16819728A95D4400281987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B1681A828A95D7800281987 /* lib_opus_watchos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lib_opus_watchos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B1681AA28A95D7800281987 /* lib_opus_watchos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lib_opus_watchos.h; sourceTree = "<group>"; };
-		8B1681AB28A95D7800281987 /* lib_opus_watchos.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = lib_opus_watchos.docc; sourceTree = "<group>"; };
-		8B1681B128A95D7800281987 /* lib-opus-watchosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lib-opus-watchosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B1681B828A95D7800281987 /* lib_opus_watchosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lib_opus_watchosTests.swift; sourceTree = "<group>"; };
-		8B20BFB628A52FB8000832FA /* BLOpus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BLOpus.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B20BFB928A52FB8000832FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B20BFBB28A52FB8000832FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B20BFBD28A52FB8000832FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8B20BFC028A52FB8000832FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8B20BFC228A52FBA000832FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B20BFC528A52FBA000832FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8B20BFC728A52FBA000832FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8B20BFD228A52FEE000832FA /* lib_opus_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lib_opus_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B20BFD428A52FEE000832FA /* lib_opus_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lib_opus_ios.h; sourceTree = "<group>"; };
-		8B20BFD528A52FEE000832FA /* lib_opus_ios.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = lib_opus_ios.docc; sourceTree = "<group>"; };
-		8B20BFDB28A52FEE000832FA /* lib-opus-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lib-opus-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B20BFE228A52FEE000832FA /* lib_opus_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lib_opus_iosTests.swift; sourceTree = "<group>"; };
-		8B20BFF428A53037000832FA /* BLOpus macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLOpus macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B20BFF628A53037000832FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B20BFF828A53037000832FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8B20BFFA28A53039000832FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8B20BFFD28A53039000832FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8B20BFFF28A53039000832FA /* BLOpus_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BLOpus_macOS.entitlements; sourceTree = "<group>"; };
-		8B20C00828A53048000832FA /* lib_opus_macos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lib_opus_macos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B20C00A28A53048000832FA /* lib_opus_macos.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lib_opus_macos.h; sourceTree = "<group>"; };
-		8B20C00B28A53048000832FA /* lib_opus_macos.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = lib_opus_macos.docc; sourceTree = "<group>"; };
-		8B20C01128A53048000832FA /* lib-opus-macosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lib-opus-macosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B20C01828A53048000832FA /* lib_opus_macosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lib_opus_macosTests.swift; sourceTree = "<group>"; };
-		C0169A3028DCEDB20078B17E /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = "lib-opus/ressources/watchOS/libogg.a"; sourceTree = "<group>"; };
-		C0169A3128DCEDB20078B17E /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus.a; path = "lib-opus/ressources/watchOS/libopus.a"; sourceTree = "<group>"; };
-		C0169A3928DCF2990078B17E /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus.a; path = "lib-opus/ressources/macOS/libopus.a"; sourceTree = "<group>"; };
-		C0169A3A28DCF2990078B17E /* libogg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libogg.a; path = "lib-opus/ressources/macOS/libogg.a"; sourceTree = "<group>"; };
-		C047871F28D8F4CE007DC2DE /* opus_header.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = opus_header.c; sourceTree = "<group>"; };
-		C094807E28D8E70300087586 /* OggHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OggHelper.h; sourceTree = "<group>"; };
-		C094807F28D8E70300087586 /* OpusHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpusHelper.h; sourceTree = "<group>"; };
-		C094808028D8E70300087586 /* OggHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OggHelper.m; sourceTree = "<group>"; };
-		C094808128D8E70300087586 /* OpusHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpusHelper.m; sourceTree = "<group>"; };
+		C08FA3CE28DCF8FB00BFB1BA /* BLOpus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BLOpus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08FA3D128DCF8FB00BFB1BA /* BLOpus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BLOpus.h; sourceTree = "<group>"; };
+		C08FA3D228DCF8FB00BFB1BA /* BLOpus.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = BLOpus.docc; sourceTree = "<group>"; };
+		C08FA3D828DCF8FB00BFB1BA /* BLOpusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BLOpusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C08FA3DD28DCF8FB00BFB1BA /* BLOpusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLOpusTests.swift; sourceTree = "<group>"; };
+		C08FA3F228DCFABB00BFB1BA /* OggHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OggHelper.m; sourceTree = "<group>"; };
+		C08FA3F328DCFABB00BFB1BA /* opus_header.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = opus_header.c; sourceTree = "<group>"; };
+		C08FA3F428DCFABB00BFB1BA /* OggHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OggHelper.h; sourceTree = "<group>"; };
+		C08FA3F528DCFABB00BFB1BA /* OpusHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpusHelper.h; sourceTree = "<group>"; };
+		C08FA3F628DCFABB00BFB1BA /* OpusHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpusHelper.m; sourceTree = "<group>"; };
+		C08FA3FE28DCFD0200BFB1BA /* libopus-watchos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopus-watchos.a"; path = "Dependencies/ressources/libopus-watchos.a"; sourceTree = "<group>"; };
+		C08FA3FF28DCFD0200BFB1BA /* libogg-macos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libogg-macos.a"; path = "Dependencies/ressources/libogg-macos.a"; sourceTree = "<group>"; };
+		C08FA40028DCFD0200BFB1BA /* libogg-watchos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libogg-watchos.a"; path = "Dependencies/ressources/libogg-watchos.a"; sourceTree = "<group>"; };
+		C08FA40128DCFD0200BFB1BA /* libogg-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libogg-ios.a"; path = "Dependencies/ressources/libogg-ios.a"; sourceTree = "<group>"; };
+		C08FA40228DCFD0200BFB1BA /* libopus-macos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopus-macos.a"; path = "Dependencies/ressources/libopus-macos.a"; sourceTree = "<group>"; };
+		C08FA40328DCFD0300BFB1BA /* libopus-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopus-ios.a"; path = "Dependencies/ressources/libopus-ios.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8B16818728A95D4300281987 /* Frameworks */ = {
+		C08FA3CB28DCF8FB00BFB1BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B1681BD28A95D7800281987 /* lib_opus_watchos.framework in Frameworks */,
+				C08FA40628DCFD2E00BFB1BA /* libogg-watchos.a in Frameworks */,
+				C08FA40428DCFD2E00BFB1BA /* libogg-ios.a in Frameworks */,
+				C08FA40928DCFD2E00BFB1BA /* libopus-watchos.a in Frameworks */,
+				C08FA40728DCFD2E00BFB1BA /* libopus-ios.a in Frameworks */,
+				C08FA40528DCFD2E00BFB1BA /* libogg-macos.a in Frameworks */,
+				C08FA40828DCFD2E00BFB1BA /* libopus-macos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B1681A528A95D7800281987 /* Frameworks */ = {
+		C08FA3D528DCF8FB00BFB1BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0169A3328DCEDCB0078B17E /* libopus.a in Frameworks */,
-				C0169A3228DCEDCB0078B17E /* libogg.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B1681AE28A95D7800281987 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B1681B228A95D7800281987 /* lib_opus_watchos.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFB328A52FB8000832FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20BFE728A52FEE000832FA /* lib_opus_ios.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFCF28A52FEE000832FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFD828A52FEE000832FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20BFDC28A52FEE000832FA /* lib_opus_ios.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFF128A53037000832FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20C01D28A53048000832FA /* lib_opus_macos.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20C00528A53048000832FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C0169A3C28DCF2B10078B17E /* libopus.a in Frameworks */,
-				C0169A3B28DCF2B10078B17E /* libogg.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20C00E28A53048000832FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20C01228A53048000832FA /* lib_opus_macos.framework in Frameworks */,
+				C08FA3D928DCF8FB00BFB1BA /* BLOpus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8B16818028A95D4200281987 /* BLOpus watchOS */ = {
+		C08FA3C428DCF8FB00BFB1BA = {
 			isa = PBXGroup;
 			children = (
-				8B16818128A95D4200281987 /* Interface.storyboard */,
-				8B16818428A95D4300281987 /* Assets.xcassets */,
-			);
-			path = "BLOpus watchOS";
-			sourceTree = "<group>";
-		};
-		8B16818E28A95D4300281987 /* BLOpus watchOS WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				8B16818F28A95D4300281987 /* InterfaceController.swift */,
-				8B16819128A95D4300281987 /* ExtensionDelegate.swift */,
-				8B16819328A95D4300281987 /* ComplicationController.swift */,
-				8B16819528A95D4400281987 /* Assets.xcassets */,
-				8B16819728A95D4400281987 /* Info.plist */,
-			);
-			path = "BLOpus watchOS WatchKit Extension";
-			sourceTree = "<group>";
-		};
-		8B1681A928A95D7800281987 /* lib-opus-watchos */ = {
-			isa = PBXGroup;
-			children = (
-				8B1681AA28A95D7800281987 /* lib_opus_watchos.h */,
-				8B1681AB28A95D7800281987 /* lib_opus_watchos.docc */,
-			);
-			path = "lib-opus-watchos";
-			sourceTree = "<group>";
-		};
-		8B1681B728A95D7800281987 /* lib-opus-watchosTests */ = {
-			isa = PBXGroup;
-			children = (
-				8B1681B828A95D7800281987 /* lib_opus_watchosTests.swift */,
-			);
-			path = "lib-opus-watchosTests";
-			sourceTree = "<group>";
-		};
-		8B20BFAD28A52FB8000832FA = {
-			isa = PBXGroup;
-			children = (
-				C094808B28D8E9D900087586 /* Shared */,
-				8B20BFB828A52FB8000832FA /* BLOpus */,
-				C094807D28D8E6B900087586 /* lib-opus */,
-				8B20BFD328A52FEE000832FA /* lib-opus-ios */,
-				8B20BFE128A52FEE000832FA /* lib-opus-iosTests */,
-				8B20BFF528A53037000832FA /* BLOpus macOS */,
-				8B20C00928A53048000832FA /* lib-opus-macos */,
-				8B20C01728A53048000832FA /* lib-opus-macosTests */,
-				8B16818028A95D4200281987 /* BLOpus watchOS */,
-				8B16818E28A95D4300281987 /* BLOpus watchOS WatchKit Extension */,
-				8B1681A928A95D7800281987 /* lib-opus-watchos */,
-				8B1681B728A95D7800281987 /* lib-opus-watchosTests */,
-				8B20BFB728A52FB8000832FA /* Products */,
-				C094807828D8E4DE00087586 /* Frameworks */,
+				C08FA3D028DCF8FB00BFB1BA /* BLOpus */,
+				C08FA3DC28DCF8FB00BFB1BA /* BLOpusTests */,
+				C08FA3CF28DCF8FB00BFB1BA /* Products */,
+				C08FA3FC28DCFC8F00BFB1BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		8B20BFB728A52FB8000832FA /* Products */ = {
+		C08FA3CF28DCF8FB00BFB1BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8B20BFB628A52FB8000832FA /* BLOpus.app */,
-				8B20BFD228A52FEE000832FA /* lib_opus_ios.framework */,
-				8B20BFDB28A52FEE000832FA /* lib-opus-iosTests.xctest */,
-				8B20BFF428A53037000832FA /* BLOpus macOS.app */,
-				8B20C00828A53048000832FA /* lib_opus_macos.framework */,
-				8B20C01128A53048000832FA /* lib-opus-macosTests.xctest */,
-				8B16817F28A95D4200281987 /* BLOpus watchOS.app */,
-				8B16818A28A95D4300281987 /* BLOpus watchOS WatchKit Extension.appex */,
-				8B1681A828A95D7800281987 /* lib_opus_watchos.framework */,
-				8B1681B128A95D7800281987 /* lib-opus-watchosTests.xctest */,
+				C08FA3CE28DCF8FB00BFB1BA /* BLOpus.framework */,
+				C08FA3D828DCF8FB00BFB1BA /* BLOpusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8B20BFB828A52FB8000832FA /* BLOpus */ = {
+		C08FA3D028DCF8FB00BFB1BA /* BLOpus */ = {
 			isa = PBXGroup;
 			children = (
-				8B20BFB928A52FB8000832FA /* AppDelegate.swift */,
-				8B20BFBB28A52FB8000832FA /* SceneDelegate.swift */,
-				8B20BFBD28A52FB8000832FA /* ViewController.swift */,
-				8B20BFBF28A52FB8000832FA /* Main.storyboard */,
-				8B20BFC228A52FBA000832FA /* Assets.xcassets */,
-				8B20BFC428A52FBA000832FA /* LaunchScreen.storyboard */,
-				8B20BFC728A52FBA000832FA /* Info.plist */,
+				C08FA3F428DCFABB00BFB1BA /* OggHelper.h */,
+				C08FA3F228DCFABB00BFB1BA /* OggHelper.m */,
+				C08FA3F328DCFABB00BFB1BA /* opus_header.c */,
+				C08FA3F528DCFABB00BFB1BA /* OpusHelper.h */,
+				C08FA3F628DCFABB00BFB1BA /* OpusHelper.m */,
+				C08FA3D128DCF8FB00BFB1BA /* BLOpus.h */,
+				C08FA3D228DCF8FB00BFB1BA /* BLOpus.docc */,
 			);
 			path = BLOpus;
 			sourceTree = "<group>";
 		};
-		8B20BFD328A52FEE000832FA /* lib-opus-ios */ = {
+		C08FA3DC28DCF8FB00BFB1BA /* BLOpusTests */ = {
 			isa = PBXGroup;
 			children = (
-				8B20BFD428A52FEE000832FA /* lib_opus_ios.h */,
-				8B20BFD528A52FEE000832FA /* lib_opus_ios.docc */,
+				C08FA3DD28DCF8FB00BFB1BA /* BLOpusTests.swift */,
 			);
-			path = "lib-opus-ios";
+			path = BLOpusTests;
 			sourceTree = "<group>";
 		};
-		8B20BFE128A52FEE000832FA /* lib-opus-iosTests */ = {
+		C08FA3FC28DCFC8F00BFB1BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8B20BFE228A52FEE000832FA /* lib_opus_iosTests.swift */,
-			);
-			path = "lib-opus-iosTests";
-			sourceTree = "<group>";
-		};
-		8B20BFF528A53037000832FA /* BLOpus macOS */ = {
-			isa = PBXGroup;
-			children = (
-				8B20BFF628A53037000832FA /* AppDelegate.swift */,
-				8B20BFF828A53037000832FA /* ViewController.swift */,
-				8B20BFFA28A53039000832FA /* Assets.xcassets */,
-				8B20BFFC28A53039000832FA /* Main.storyboard */,
-				8B20BFFF28A53039000832FA /* BLOpus_macOS.entitlements */,
-			);
-			path = "BLOpus macOS";
-			sourceTree = "<group>";
-		};
-		8B20C00928A53048000832FA /* lib-opus-macos */ = {
-			isa = PBXGroup;
-			children = (
-				8B20C00A28A53048000832FA /* lib_opus_macos.h */,
-				8B20C00B28A53048000832FA /* lib_opus_macos.docc */,
-			);
-			path = "lib-opus-macos";
-			sourceTree = "<group>";
-		};
-		8B20C01728A53048000832FA /* lib-opus-macosTests */ = {
-			isa = PBXGroup;
-			children = (
-				8B20C01828A53048000832FA /* lib_opus_macosTests.swift */,
-			);
-			path = "lib-opus-macosTests";
-			sourceTree = "<group>";
-		};
-		C094807828D8E4DE00087586 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C0169A3A28DCF2990078B17E /* libogg.a */,
-				C0169A3928DCF2990078B17E /* libopus.a */,
-				C0169A3028DCEDB20078B17E /* libogg.a */,
-				C0169A3128DCEDB20078B17E /* libopus.a */,
+				C08FA40128DCFD0200BFB1BA /* libogg-ios.a */,
+				C08FA3FF28DCFD0200BFB1BA /* libogg-macos.a */,
+				C08FA40028DCFD0200BFB1BA /* libogg-watchos.a */,
+				C08FA40328DCFD0300BFB1BA /* libopus-ios.a */,
+				C08FA40228DCFD0200BFB1BA /* libopus-macos.a */,
+				C08FA3FE28DCFD0200BFB1BA /* libopus-watchos.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C094807D28D8E6B900087586 /* lib-opus */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "lib-opus";
-			sourceTree = "<group>";
-		};
-		C094808B28D8E9D900087586 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				C047871F28D8F4CE007DC2DE /* opus_header.c */,
-				C094807E28D8E70300087586 /* OggHelper.h */,
-				C094808028D8E70300087586 /* OggHelper.m */,
-				C094807F28D8E70300087586 /* OpusHelper.h */,
-				C094808128D8E70300087586 /* OpusHelper.m */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		8B1681A328A95D7800281987 /* Headers */ = {
+		C08FA3C928DCF8FB00BFB1BA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0169A3528DCEDEF0078B17E /* OggHelper.h in Headers */,
-				8B1681BA28A95D7800281987 /* lib_opus_watchos.h in Headers */,
-				C0169A3728DCEDF60078B17E /* OpusHelper.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFCD28A52FEE000832FA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C094808228D8E70300087586 /* OggHelper.h in Headers */,
-				8B20BFE428A52FEE000832FA /* lib_opus_ios.h in Headers */,
-				C094808328D8E70300087586 /* OpusHelper.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20C00328A53048000832FA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C0169A3E28DCF2B90078B17E /* OggHelper.h in Headers */,
-				8B20C01A28A53048000832FA /* lib_opus_macos.h in Headers */,
-				C0169A4028DCF2BE0078B17E /* OpusHelper.h in Headers */,
+				C08FA3F928DCFABB00BFB1BA /* OggHelper.h in Headers */,
+				C08FA3DF28DCF8FB00BFB1BA /* BLOpus.h in Headers */,
+				C08FA3FA28DCFABB00BFB1BA /* OpusHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8B16817E28A95D4200281987 /* BLOpus watchOS */ = {
+		C08FA3CD28DCF8FB00BFB1BA /* BLOpus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B1681A228A95D4400281987 /* Build configuration list for PBXNativeTarget "BLOpus watchOS" */;
+			buildConfigurationList = C08FA3E228DCF8FB00BFB1BA /* Build configuration list for PBXNativeTarget "BLOpus" */;
 			buildPhases = (
-				8B16817D28A95D4200281987 /* Resources */,
-				8B16819E28A95D4400281987 /* Embed App Extensions */,
+				C08FA3C928DCF8FB00BFB1BA /* Headers */,
+				C08FA3CA28DCF8FB00BFB1BA /* Sources */,
+				C08FA3CB28DCF8FB00BFB1BA /* Frameworks */,
+				C08FA3CC28DCF8FB00BFB1BA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8B16818D28A95D4300281987 /* PBXTargetDependency */,
-			);
-			name = "BLOpus watchOS";
-			productName = "BLOpus watchOS";
-			productReference = 8B16817F28A95D4200281987 /* BLOpus watchOS.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		8B16818928A95D4300281987 /* BLOpus watchOS WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B1681A128A95D4400281987 /* Build configuration list for PBXNativeTarget "BLOpus watchOS WatchKit Extension" */;
-			buildPhases = (
-				8B16818628A95D4300281987 /* Sources */,
-				8B16818728A95D4300281987 /* Frameworks */,
-				8B16818828A95D4300281987 /* Resources */,
-				8B1681C228A95D7800281987 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B1681BC28A95D7800281987 /* PBXTargetDependency */,
-			);
-			name = "BLOpus watchOS WatchKit Extension";
-			productName = "BLOpus watchOS WatchKit Extension";
-			productReference = 8B16818A28A95D4300281987 /* BLOpus watchOS WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
-		8B1681A728A95D7800281987 /* lib-opus-watchos */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B1681BF28A95D7800281987 /* Build configuration list for PBXNativeTarget "lib-opus-watchos" */;
-			buildPhases = (
-				8B1681A328A95D7800281987 /* Headers */,
-				8B1681A428A95D7800281987 /* Sources */,
-				8B1681A528A95D7800281987 /* Frameworks */,
-				8B1681A628A95D7800281987 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "lib-opus-watchos";
-			productName = "lib-opus-watchos";
-			productReference = 8B1681A828A95D7800281987 /* lib_opus_watchos.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8B1681B028A95D7800281987 /* lib-opus-watchosTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B1681C328A95D7800281987 /* Build configuration list for PBXNativeTarget "lib-opus-watchosTests" */;
-			buildPhases = (
-				8B1681AD28A95D7800281987 /* Sources */,
-				8B1681AE28A95D7800281987 /* Frameworks */,
-				8B1681AF28A95D7800281987 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B1681B428A95D7800281987 /* PBXTargetDependency */,
-				8B1681B628A95D7800281987 /* PBXTargetDependency */,
-			);
-			name = "lib-opus-watchosTests";
-			productName = "lib-opus-watchosTests";
-			productReference = 8B1681B128A95D7800281987 /* lib-opus-watchosTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8B20BFB528A52FB8000832FA /* BLOpus */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B20BFCA28A52FBA000832FA /* Build configuration list for PBXNativeTarget "BLOpus" */;
-			buildPhases = (
-				8B20BFB228A52FB8000832FA /* Sources */,
-				8B20BFB328A52FB8000832FA /* Frameworks */,
-				8B20BFB428A52FB8000832FA /* Resources */,
-				8B20BFEC28A52FEF000832FA /* Embed Frameworks */,
-				8B16819B28A95D4400281987 /* Embed Watch Content */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B20BFE628A52FEE000832FA /* PBXTargetDependency */,
-				8B16819928A95D4400281987 /* PBXTargetDependency */,
 			);
 			name = BLOpus;
 			productName = BLOpus;
-			productReference = 8B20BFB628A52FB8000832FA /* BLOpus.app */;
-			productType = "com.apple.product-type.application";
-		};
-		8B20BFD128A52FEE000832FA /* lib-opus-ios */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B20BFE928A52FEF000832FA /* Build configuration list for PBXNativeTarget "lib-opus-ios" */;
-			buildPhases = (
-				8B20BFCD28A52FEE000832FA /* Headers */,
-				8B20BFCE28A52FEE000832FA /* Sources */,
-				8B20BFCF28A52FEE000832FA /* Frameworks */,
-				8B20BFD028A52FEE000832FA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "lib-opus-ios";
-			productName = "lib-opus-ios";
-			productReference = 8B20BFD228A52FEE000832FA /* lib_opus_ios.framework */;
+			productReference = C08FA3CE28DCF8FB00BFB1BA /* BLOpus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		8B20BFDA28A52FEE000832FA /* lib-opus-iosTests */ = {
+		C08FA3D728DCF8FB00BFB1BA /* BLOpusTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B20BFED28A52FEF000832FA /* Build configuration list for PBXNativeTarget "lib-opus-iosTests" */;
+			buildConfigurationList = C08FA3E528DCF8FB00BFB1BA /* Build configuration list for PBXNativeTarget "BLOpusTests" */;
 			buildPhases = (
-				8B20BFD728A52FEE000832FA /* Sources */,
-				8B20BFD828A52FEE000832FA /* Frameworks */,
-				8B20BFD928A52FEE000832FA /* Resources */,
+				C08FA3D428DCF8FB00BFB1BA /* Sources */,
+				C08FA3D528DCF8FB00BFB1BA /* Frameworks */,
+				C08FA3D628DCF8FB00BFB1BA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8B20BFDE28A52FEE000832FA /* PBXTargetDependency */,
-				8B20BFE028A52FEE000832FA /* PBXTargetDependency */,
+				C08FA3DB28DCF8FB00BFB1BA /* PBXTargetDependency */,
 			);
-			name = "lib-opus-iosTests";
-			productName = "lib-opus-iosTests";
-			productReference = 8B20BFDB28A52FEE000832FA /* lib-opus-iosTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		8B20BFF328A53037000832FA /* BLOpus macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B20C00028A53039000832FA /* Build configuration list for PBXNativeTarget "BLOpus macOS" */;
-			buildPhases = (
-				8B20BFF028A53037000832FA /* Sources */,
-				8B20BFF128A53037000832FA /* Frameworks */,
-				8B20BFF228A53037000832FA /* Resources */,
-				8B20C02228A53048000832FA /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B20C01C28A53048000832FA /* PBXTargetDependency */,
-			);
-			name = "BLOpus macOS";
-			productName = "BLOpus macOS";
-			productReference = 8B20BFF428A53037000832FA /* BLOpus macOS.app */;
-			productType = "com.apple.product-type.application";
-		};
-		8B20C00728A53048000832FA /* lib-opus-macos */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B20C01F28A53048000832FA /* Build configuration list for PBXNativeTarget "lib-opus-macos" */;
-			buildPhases = (
-				8B20C00328A53048000832FA /* Headers */,
-				8B20C00428A53048000832FA /* Sources */,
-				8B20C00528A53048000832FA /* Frameworks */,
-				8B20C00628A53048000832FA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "lib-opus-macos";
-			productName = "lib-opus-macos";
-			productReference = 8B20C00828A53048000832FA /* lib_opus_macos.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8B20C01028A53048000832FA /* lib-opus-macosTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B20C02328A53048000832FA /* Build configuration list for PBXNativeTarget "lib-opus-macosTests" */;
-			buildPhases = (
-				8B20C00D28A53048000832FA /* Sources */,
-				8B20C00E28A53048000832FA /* Frameworks */,
-				8B20C00F28A53048000832FA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8B20C01428A53048000832FA /* PBXTargetDependency */,
-				8B20C01628A53048000832FA /* PBXTargetDependency */,
-			);
-			name = "lib-opus-macosTests";
-			productName = "lib-opus-macosTests";
-			productReference = 8B20C01128A53048000832FA /* lib-opus-macosTests.xctest */;
+			name = BLOpusTests;
+			productName = BLOpusTests;
+			productReference = C08FA3D828DCF8FB00BFB1BA /* BLOpusTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8B20BFAE28A52FB8000832FA /* Project object */ = {
+		C08FA3C528DCF8FB00BFB1BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					8B16817E28A95D4200281987 = {
-						CreatedOnToolsVersion = 13.2.1;
+					C08FA3CD28DCF8FB00BFB1BA = {
+						CreatedOnToolsVersion = 14.0;
 					};
-					8B16818928A95D4300281987 = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					8B1681A728A95D7800281987 = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					8B1681B028A95D7800281987 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 8B16818928A95D4300281987;
-					};
-					8B20BFB528A52FB8000832FA = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					8B20BFD128A52FEE000832FA = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					8B20BFDA28A52FEE000832FA = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 8B20BFB528A52FB8000832FA;
-					};
-					8B20BFF328A53037000832FA = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					8B20C00728A53048000832FA = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
-					8B20C01028A53048000832FA = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 8B20BFF328A53037000832FA;
+					C08FA3D728DCF8FB00BFB1BA = {
+						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
-			buildConfigurationList = 8B20BFB128A52FB8000832FA /* Build configuration list for PBXProject "BLOpus" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = C08FA3C828DCF8FB00BFB1BA /* Build configuration list for PBXProject "BLOpus" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 8B20BFAD28A52FB8000832FA;
-			productRefGroup = 8B20BFB728A52FB8000832FA /* Products */;
+			mainGroup = C08FA3C428DCF8FB00BFB1BA;
+			productRefGroup = C08FA3CF28DCF8FB00BFB1BA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8B20BFB528A52FB8000832FA /* BLOpus */,
-				8B20BFD128A52FEE000832FA /* lib-opus-ios */,
-				8B20BFDA28A52FEE000832FA /* lib-opus-iosTests */,
-				8B20BFF328A53037000832FA /* BLOpus macOS */,
-				8B20C00728A53048000832FA /* lib-opus-macos */,
-				8B20C01028A53048000832FA /* lib-opus-macosTests */,
-				8B16817E28A95D4200281987 /* BLOpus watchOS */,
-				8B16818928A95D4300281987 /* BLOpus watchOS WatchKit Extension */,
-				8B1681A728A95D7800281987 /* lib-opus-watchos */,
-				8B1681B028A95D7800281987 /* lib-opus-watchosTests */,
+				C08FA3CD28DCF8FB00BFB1BA /* BLOpus */,
+				C08FA3D728DCF8FB00BFB1BA /* BLOpusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8B16817D28A95D4200281987 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B16818528A95D4300281987 /* Assets.xcassets in Resources */,
-				8B16818328A95D4200281987 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B16818828A95D4300281987 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B16819628A95D4400281987 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B1681A628A95D7800281987 /* Resources */ = {
+		C08FA3CC28DCF8FB00BFB1BA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B1681AF28A95D7800281987 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFB428A52FB8000832FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20BFC628A52FBA000832FA /* LaunchScreen.storyboard in Resources */,
-				8B20BFC328A52FBA000832FA /* Assets.xcassets in Resources */,
-				8B20BFC128A52FB8000832FA /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFD028A52FEE000832FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFD928A52FEE000832FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFF228A53037000832FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20BFFB28A53039000832FA /* Assets.xcassets in Resources */,
-				8B20BFFE28A53039000832FA /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20C00628A53048000832FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20C00F28A53048000832FA /* Resources */ = {
+		C08FA3D628DCF8FB00BFB1BA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -871,431 +239,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8B16818628A95D4300281987 /* Sources */ = {
+		C08FA3CA28DCF8FB00BFB1BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B16819228A95D4300281987 /* ExtensionDelegate.swift in Sources */,
-				8B16819028A95D4300281987 /* InterfaceController.swift in Sources */,
-				8B16819428A95D4300281987 /* ComplicationController.swift in Sources */,
+				C08FA3D328DCF8FB00BFB1BA /* BLOpus.docc in Sources */,
+				C08FA3F728DCFABB00BFB1BA /* OggHelper.m in Sources */,
+				C08FA3FB28DCFABB00BFB1BA /* OpusHelper.m in Sources */,
+				C08FA3F828DCFABB00BFB1BA /* opus_header.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B1681A428A95D7800281987 /* Sources */ = {
+		C08FA3D428DCF8FB00BFB1BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B1681AC28A95D7800281987 /* lib_opus_watchos.docc in Sources */,
-				C0169A3628DCEDF30078B17E /* OggHelper.m in Sources */,
-				C0169A3828DCEDF90078B17E /* OpusHelper.m in Sources */,
-				C0169A3428DCEDEB0078B17E /* opus_header.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B1681AD28A95D7800281987 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B1681B928A95D7800281987 /* lib_opus_watchosTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFB228A52FB8000832FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20BFBE28A52FB8000832FA /* ViewController.swift in Sources */,
-				8B20BFBA28A52FB8000832FA /* AppDelegate.swift in Sources */,
-				8B20BFBC28A52FB8000832FA /* SceneDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFCE28A52FEE000832FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C094808528D8E70300087586 /* OpusHelper.m in Sources */,
-				C047872028D8F4CE007DC2DE /* opus_header.c in Sources */,
-				8B20BFD628A52FEE000832FA /* lib_opus_ios.docc in Sources */,
-				C094808428D8E70300087586 /* OggHelper.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFD728A52FEE000832FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20BFE328A52FEE000832FA /* lib_opus_iosTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20BFF028A53037000832FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20BFF928A53037000832FA /* ViewController.swift in Sources */,
-				8B20BFF728A53037000832FA /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20C00428A53048000832FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20C00C28A53048000832FA /* lib_opus_macos.docc in Sources */,
-				C0169A3F28DCF2BB0078B17E /* OggHelper.m in Sources */,
-				C0169A4128DCF2C10078B17E /* OpusHelper.m in Sources */,
-				C0169A3D28DCF2B60078B17E /* opus_header.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8B20C00D28A53048000832FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8B20C01928A53048000832FA /* lib_opus_macosTests.swift in Sources */,
+				C08FA3DE28DCF8FB00BFB1BA /* BLOpusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8B16818D28A95D4300281987 /* PBXTargetDependency */ = {
+		C08FA3DB28DCF8FB00BFB1BA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8B16818928A95D4300281987 /* BLOpus watchOS WatchKit Extension */;
-			targetProxy = 8B16818C28A95D4300281987 /* PBXContainerItemProxy */;
-		};
-		8B16819928A95D4400281987 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B16817E28A95D4200281987 /* BLOpus watchOS */;
-			targetProxy = 8B16819828A95D4400281987 /* PBXContainerItemProxy */;
-		};
-		8B1681B428A95D7800281987 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B1681A728A95D7800281987 /* lib-opus-watchos */;
-			targetProxy = 8B1681B328A95D7800281987 /* PBXContainerItemProxy */;
-		};
-		8B1681B628A95D7800281987 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B16818928A95D4300281987 /* BLOpus watchOS WatchKit Extension */;
-			targetProxy = 8B1681B528A95D7800281987 /* PBXContainerItemProxy */;
-		};
-		8B1681BC28A95D7800281987 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B1681A728A95D7800281987 /* lib-opus-watchos */;
-			targetProxy = 8B1681BB28A95D7800281987 /* PBXContainerItemProxy */;
-		};
-		8B20BFDE28A52FEE000832FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B20BFD128A52FEE000832FA /* lib-opus-ios */;
-			targetProxy = 8B20BFDD28A52FEE000832FA /* PBXContainerItemProxy */;
-		};
-		8B20BFE028A52FEE000832FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B20BFB528A52FB8000832FA /* BLOpus */;
-			targetProxy = 8B20BFDF28A52FEE000832FA /* PBXContainerItemProxy */;
-		};
-		8B20BFE628A52FEE000832FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B20BFD128A52FEE000832FA /* lib-opus-ios */;
-			targetProxy = 8B20BFE528A52FEE000832FA /* PBXContainerItemProxy */;
-		};
-		8B20C01428A53048000832FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B20C00728A53048000832FA /* lib-opus-macos */;
-			targetProxy = 8B20C01328A53048000832FA /* PBXContainerItemProxy */;
-		};
-		8B20C01628A53048000832FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B20BFF328A53037000832FA /* BLOpus macOS */;
-			targetProxy = 8B20C01528A53048000832FA /* PBXContainerItemProxy */;
-		};
-		8B20C01C28A53048000832FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8B20C00728A53048000832FA /* lib-opus-macos */;
-			targetProxy = 8B20C01B28A53048000832FA /* PBXContainerItemProxy */;
+			target = C08FA3CD28DCF8FB00BFB1BA /* BLOpus */;
+			targetProxy = C08FA3DA28DCF8FB00BFB1BA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		8B16818128A95D4200281987 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B16818228A95D4200281987 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-		8B20BFBF28A52FB8000832FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B20BFC028A52FB8000832FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8B20BFC428A52FBA000832FA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B20BFC528A52FBA000832FA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		8B20BFFC28A53039000832FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B20BFFD28A53039000832FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		8B16819C28A95D4400281987 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IBSC_MODULE = BLOpus_watchOS_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "BLOpus watchOS";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.binarieslab.BLOpus;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpus.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		8B16819D28A95D4400281987 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				IBSC_MODULE = BLOpus_watchOS_WatchKit_Extension;
-				INFOPLIST_KEY_CFBundleDisplayName = "BLOpus watchOS";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.binarieslab.BLOpus;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpus.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
-		8B16819F28A95D4400281987 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "BLOpus watchOS WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "BLOpus watchOS WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpus.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		8B1681A028A95D4400281987 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "BLOpus watchOS WatchKit Extension/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "BLOpus watchOS WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpus.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
-		8B1681C028A95D7800281987 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
-				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/include",
-				);
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/ressources/watchOS",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-watchos";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		8B1681C128A95D7800281987 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/include",
-				);
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/ressources/watchOS",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-watchos";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
-		8B1681C428A95D7800281987 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-watchosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLOpus watchOS WatchKit Extension.appex/BLOpus watchOS WatchKit Extension";
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Debug;
-		};
-		8B1681C528A95D7800281987 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-watchosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLOpus watchOS WatchKit Extension.appex/BLOpus watchOS WatchKit Extension";
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
-			};
-			name = Release;
-		};
-		8B20BFC828A52FBA000832FA /* Debug */ = {
+		C08FA3E028DCF8FB00BFB1BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1322,6 +302,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1339,26 +320,23 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		8B20BFC928A52FBA000832FA /* Release */ = {
+		C08FA3E128DCF8FB00BFB1BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -1385,6 +363,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1396,83 +375,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		8B20BFCB28A52FBA000832FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BLOpus/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpus;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8B20BFCC28A52FBA000832FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BLOpus/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpus;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		8B20BFEA28A52FEF000832FA /* Debug */ = {
+		C08FA3E328DCF8FB00BFB1BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -1483,38 +395,45 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				"EXCLUDED_ARCHS[sdk=watchsimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/include",
+					"$(PROJECT_DIR)/Dependencies/include",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/ressources/iOS",
+					"$(PROJECT_DIR)/Dependencies/ressources/**",
+					"$(PROJECT_DIR)/Dependencies/ressources",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpus;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
-		8B20BFEB28A52FEF000832FA /* Release */ = {
+		C08FA3E428DCF8FB00BFB1BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -1527,357 +446,111 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/include",
+					"$(PROJECT_DIR)/Dependencies/include",
 				);
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/ressources/iOS",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-ios";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8B20BFEE28A52FEF000832FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-iosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLOpus.app/BLOpus";
-			};
-			name = Debug;
-		};
-		8B20BFEF28A52FEF000832FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-iosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLOpus.app/BLOpus";
-			};
-			name = Release;
-		};
-		8B20C00128A53039000832FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "BLOpus macOS/BLOpus_macOS.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.BLOpus-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		8B20C00228A53039000832FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "BLOpus macOS/BLOpus_macOS.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				ENABLE_HARDENED_RUNTIME = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainStoryboardFile = Main;
-				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.BLOpus-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		8B20C02028A53048000832FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/include",
-				);
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/ressources/macOS",
+					"$(PROJECT_DIR)/Dependencies/ressources/**",
+					"$(PROJECT_DIR)/Dependencies/ressources",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-macos";
+				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpus;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
+				SDKROOT = auto;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8B20C02128A53048000832FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = YZFZ7SBM3C;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GENERATE_INFOPLIST_FILE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/include",
-				);
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/lib-opus/ressources/macOS",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-macos";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
-		8B20C02428A53048000832FA /* Debug */ = {
+		C08FA3E628DCF8FB00BFB1BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YZFZ7SBM3C;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-macosTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLOpus macOS.app/Contents/MacOS/BLOpus macOS";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		8B20C02528A53048000832FA /* Release */ = {
+		C08FA3E728DCF8FB00BFB1BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YZFZ7SBM3C;
 				GENERATE_INFOPLIST_FILE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.binarieslab.lib-opus-macosTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.binarieslab.BLOpusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BLOpus macOS.app/Contents/MacOS/BLOpus macOS";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8B1681A128A95D4400281987 /* Build configuration list for PBXNativeTarget "BLOpus watchOS WatchKit Extension" */ = {
+		C08FA3C828DCF8FB00BFB1BA /* Build configuration list for PBXProject "BLOpus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B16819F28A95D4400281987 /* Debug */,
-				8B1681A028A95D4400281987 /* Release */,
+				C08FA3E028DCF8FB00BFB1BA /* Debug */,
+				C08FA3E128DCF8FB00BFB1BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B1681A228A95D4400281987 /* Build configuration list for PBXNativeTarget "BLOpus watchOS" */ = {
+		C08FA3E228DCF8FB00BFB1BA /* Build configuration list for PBXNativeTarget "BLOpus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B16819C28A95D4400281987 /* Debug */,
-				8B16819D28A95D4400281987 /* Release */,
+				C08FA3E328DCF8FB00BFB1BA /* Debug */,
+				C08FA3E428DCF8FB00BFB1BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B1681BF28A95D7800281987 /* Build configuration list for PBXNativeTarget "lib-opus-watchos" */ = {
+		C08FA3E528DCF8FB00BFB1BA /* Build configuration list for PBXNativeTarget "BLOpusTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B1681C028A95D7800281987 /* Debug */,
-				8B1681C128A95D7800281987 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B1681C328A95D7800281987 /* Build configuration list for PBXNativeTarget "lib-opus-watchosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B1681C428A95D7800281987 /* Debug */,
-				8B1681C528A95D7800281987 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B20BFB128A52FB8000832FA /* Build configuration list for PBXProject "BLOpus" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B20BFC828A52FBA000832FA /* Debug */,
-				8B20BFC928A52FBA000832FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B20BFCA28A52FBA000832FA /* Build configuration list for PBXNativeTarget "BLOpus" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B20BFCB28A52FBA000832FA /* Debug */,
-				8B20BFCC28A52FBA000832FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B20BFE928A52FEF000832FA /* Build configuration list for PBXNativeTarget "lib-opus-ios" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B20BFEA28A52FEF000832FA /* Debug */,
-				8B20BFEB28A52FEF000832FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B20BFED28A52FEF000832FA /* Build configuration list for PBXNativeTarget "lib-opus-iosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B20BFEE28A52FEF000832FA /* Debug */,
-				8B20BFEF28A52FEF000832FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B20C00028A53039000832FA /* Build configuration list for PBXNativeTarget "BLOpus macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B20C00128A53039000832FA /* Debug */,
-				8B20C00228A53039000832FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B20C01F28A53048000832FA /* Build configuration list for PBXNativeTarget "lib-opus-macos" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B20C02028A53048000832FA /* Debug */,
-				8B20C02128A53048000832FA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B20C02328A53048000832FA /* Build configuration list for PBXNativeTarget "lib-opus-macosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8B20C02428A53048000832FA /* Debug */,
-				8B20C02528A53048000832FA /* Release */,
+				C08FA3E628DCF8FB00BFB1BA /* Debug */,
+				C08FA3E728DCF8FB00BFB1BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8B20BFAE28A52FB8000832FA /* Project object */;
+	rootObject = C08FA3C528DCF8FB00BFB1BA /* Project object */;
 }
