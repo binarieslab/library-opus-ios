@@ -1,0 +1,6 @@
+framework module OpusSwift {
+  umbrella header "OpusSwift.h"
+
+  export *
+  module * { export * }
+}
