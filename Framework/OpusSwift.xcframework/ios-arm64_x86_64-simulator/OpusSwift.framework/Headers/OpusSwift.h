@@ -17,3 +17,12 @@ FOUNDATION_EXPORT const unsigned char OpusSwiftVersionString[];
 
 #import "OggHelper.h"
 #import "OpusHelper.h"
+#import "config_types.h"
+#import "ogg.h"
+#import "opus_defines.h"
+#import "opus_header.h"
+#import "opus_multistream.h"
+#import "opus_projection.h"
+#import "opus_types.h"
+#import "opus.h"
+#import "os_types.h"
