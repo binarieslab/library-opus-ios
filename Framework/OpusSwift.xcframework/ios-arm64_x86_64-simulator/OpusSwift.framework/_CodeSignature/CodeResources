@@ -14,11 +14,47 @@
 		</data>
 		<key>Headers/OpusSwift.h</key>
 		<data>
-		cvIe2eWrZ0MQ/vK/37h3OrdFPfE=
+		dmBEM8EUl1DLaKNHO6i8mtAy370=
+		</data>
+		<key>Headers/config_types.h</key>
+		<data>
+		QazM9M4joxCLfakEYV+WxiKA9SY=
+		</data>
+		<key>Headers/ogg.h</key>
+		<data>
+		AG1fq3KlQ81ZJbt38BCb+d4oVjM=
+		</data>
+		<key>Headers/opus.h</key>
+		<data>
+		9iqWh6KOQxloZd6AR4Nln9WTpGM=
+		</data>
+		<key>Headers/opus_defines.h</key>
+		<data>
+		ZIxZY8da41baCR/GF2/AFpe6cck=
+		</data>
+		<key>Headers/opus_header.h</key>
+		<data>
+		s+pPw5clVwoaims1bEFpDScH5EI=
+		</data>
+		<key>Headers/opus_multistream.h</key>
+		<data>
+		BckYtz94plsXQZ9RBWuV/1kcmxw=
+		</data>
+		<key>Headers/opus_projection.h</key>
+		<data>
+		+1oZ8d5S4aqSp4DyoqRMzOcZBmU=
+		</data>
+		<key>Headers/opus_types.h</key>
+		<data>
+		4eY+K/HQ77ZaFO9EKPVfVs7L2jM=
+		</data>
+		<key>Headers/os_types.h</key>
+		<data>
+		M49cvzhxTQAHOGUaT3FaDw/ArA0=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		1E5o4NKnbMyzwHCKmgSACjmKtUc=
+		T/R2UnlHGC62aTgyDdRM9Hzq/Zg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -45,7 +81,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ab8YyCRHuZJE4lEBajikvTaRmI3O6yAE/hEGtUW0/oU=
+			08W4BXFpQypKtatcViQDAyxa37HaJGEViFcb+0u7B70=
+			</data>
+		</dict>
+		<key>Headers/config_types.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BVr5AfRMerRkSdOPpi+DK5nPSg2IDaFsW16jgjG8/p4=
+			</data>
+		</dict>
+		<key>Headers/ogg.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			okK4U7bqfTtJ8BxyRg3wzEtLrlNpFrKavDR9ysR9CWM=
+			</data>
+		</dict>
+		<key>Headers/opus.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jPzA/v85IbzDiXG+tLPzcFiknByl2mtZ+0r2OOIfjuY=
+			</data>
+		</dict>
+		<key>Headers/opus_defines.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9DvrxB739706a104pEEDAbTM24VK2EL+mF6TUjgCRAs=
+			</data>
+		</dict>
+		<key>Headers/opus_header.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XPqFNdE7hZFgz1g9+chSMqynGXk0SphSjxbEq9rcFmU=
+			</data>
+		</dict>
+		<key>Headers/opus_multistream.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G/OMOd/e727v31BLWFvk1IgsAeQcWojBJJlSsQpQDvg=
+			</data>
+		</dict>
+		<key>Headers/opus_projection.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pTdSRJ9VtfYGeeq4/aloNRAiUa7vzPfFQlZGDQJ0chY=
+			</data>
+		</dict>
+		<key>Headers/opus_types.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GcswHqHu28vbtQSTY94GGJO/EcIOUFple2nOb/pbEfo=
+			</data>
+		</dict>
+		<key>Headers/os_types.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O7q2pdMePCXGCAJSsEKvuHAo4///EA4+AoVkiyULcPQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

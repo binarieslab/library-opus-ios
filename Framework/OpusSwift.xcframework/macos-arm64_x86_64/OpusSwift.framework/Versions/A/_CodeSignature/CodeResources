@@ -6,7 +6,7 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		KDsEcRSXXBcUE5Oa1R+jNqbgBkA=
+		7P0oFihpsilqdH47gYZyhPwRklM=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -29,7 +29,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ab8YyCRHuZJE4lEBajikvTaRmI3O6yAE/hEGtUW0/oU=
+			08W4BXFpQypKtatcViQDAyxa37HaJGEViFcb+0u7B70=
+			</data>
+		</dict>
+		<key>Headers/config_types.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BVr5AfRMerRkSdOPpi+DK5nPSg2IDaFsW16jgjG8/p4=
+			</data>
+		</dict>
+		<key>Headers/ogg.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			okK4U7bqfTtJ8BxyRg3wzEtLrlNpFrKavDR9ysR9CWM=
+			</data>
+		</dict>
+		<key>Headers/opus.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			jPzA/v85IbzDiXG+tLPzcFiknByl2mtZ+0r2OOIfjuY=
+			</data>
+		</dict>
+		<key>Headers/opus_defines.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			9DvrxB739706a104pEEDAbTM24VK2EL+mF6TUjgCRAs=
+			</data>
+		</dict>
+		<key>Headers/opus_header.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XPqFNdE7hZFgz1g9+chSMqynGXk0SphSjxbEq9rcFmU=
+			</data>
+		</dict>
+		<key>Headers/opus_multistream.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G/OMOd/e727v31BLWFvk1IgsAeQcWojBJJlSsQpQDvg=
+			</data>
+		</dict>
+		<key>Headers/opus_projection.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			pTdSRJ9VtfYGeeq4/aloNRAiUa7vzPfFQlZGDQJ0chY=
+			</data>
+		</dict>
+		<key>Headers/opus_types.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GcswHqHu28vbtQSTY94GGJO/EcIOUFple2nOb/pbEfo=
+			</data>
+		</dict>
+		<key>Headers/os_types.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O7q2pdMePCXGCAJSsEKvuHAo4///EA4+AoVkiyULcPQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -43,7 +106,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EQHrOnDIz4CciMtL3pQZjxSwfgQ8HQLyd/odbMvIHl8=
+			cnuhvnA+5CaJ5cw6Ge3TFntwPy1fzdXINNN1gcfl6B0=
 			</data>
 		</dict>
 	</dict>
