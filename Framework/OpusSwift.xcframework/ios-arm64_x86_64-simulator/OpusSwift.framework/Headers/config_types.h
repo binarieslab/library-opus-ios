@@ -6,9 +6,6 @@
 #define INCLUDE_STDINT_H 1
 #define INCLUDE_SYS_TYPES_H 1
 
-/*#if INCLUDE_INTTYPES_H
-#  include <inttypes.h>
-#endif*/
 #if INCLUDE_STDINT_H
 #  include <stdint.h>
 #endif
