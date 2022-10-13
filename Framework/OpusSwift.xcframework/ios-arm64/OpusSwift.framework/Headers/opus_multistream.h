@@ -33,7 +33,7 @@
 #ifndef OPUS_MULTISTREAM_H
 #define OPUS_MULTISTREAM_H
 
-#include "opus.h"
+#include <OpusSwift/opus.h>
 
 #ifdef __cplusplus
 extern "C" {

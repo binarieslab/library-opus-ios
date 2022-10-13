@@ -33,8 +33,8 @@
 #ifndef OPUS_H
 #define OPUS_H
 
-#include "opus_types.h"
-#include "opus_defines.h"
+#include <OpusSwift/opus_types.h>
+#include <OpusSwift/opus_defines.h>
 
 #ifdef __cplusplus
 extern "C" {

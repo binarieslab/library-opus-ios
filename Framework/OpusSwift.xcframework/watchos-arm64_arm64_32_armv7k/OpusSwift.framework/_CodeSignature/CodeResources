@@ -22,15 +22,15 @@
 		</data>
 		<key>Headers/ogg.h</key>
 		<data>
-		AG1fq3KlQ81ZJbt38BCb+d4oVjM=
+		35hD7f5l6H7/8gK5R3NUDdlBKcM=
 		</data>
 		<key>Headers/opus.h</key>
 		<data>
-		9iqWh6KOQxloZd6AR4Nln9WTpGM=
+		nBkv/Qmj/IadjlBJiewLW9G3FDc=
 		</data>
 		<key>Headers/opus_defines.h</key>
 		<data>
-		ZIxZY8da41baCR/GF2/AFpe6cck=
+		0vHeVQWHztMF7wPIIayZy71hLx8=
 		</data>
 		<key>Headers/opus_header.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/opus_multistream.h</key>
 		<data>
-		BckYtz94plsXQZ9RBWuV/1kcmxw=
+		Jq5dnyGhXi7fjRYEONlSzaoQ3v8=
 		</data>
 		<key>Headers/opus_projection.h</key>
 		<data>
@@ -111,33 +111,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AG1fq3KlQ81ZJbt38BCb+d4oVjM=
+			35hD7f5l6H7/8gK5R3NUDdlBKcM=
 			</data>
 			<key>hash2</key>
 			<data>
-			okK4U7bqfTtJ8BxyRg3wzEtLrlNpFrKavDR9ysR9CWM=
+			wH+rJcdafmMCQVFXUN3dfKdmgLNX9bPCzjbTbajYzfc=
 			</data>
 		</dict>
 		<key>Headers/opus.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9iqWh6KOQxloZd6AR4Nln9WTpGM=
+			nBkv/Qmj/IadjlBJiewLW9G3FDc=
 			</data>
 			<key>hash2</key>
 			<data>
-			jPzA/v85IbzDiXG+tLPzcFiknByl2mtZ+0r2OOIfjuY=
+			T/0djKRD77fC9Cf+qgaJf7TDA8R2C1xOeft37Qrv5Tg=
 			</data>
 		</dict>
 		<key>Headers/opus_defines.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZIxZY8da41baCR/GF2/AFpe6cck=
+			0vHeVQWHztMF7wPIIayZy71hLx8=
 			</data>
 			<key>hash2</key>
 			<data>
-			9DvrxB739706a104pEEDAbTM24VK2EL+mF6TUjgCRAs=
+			kiw+E/wYBioOQE3DrCLcNCNC0NEj5+bvzSl8Osy3TtM=
 			</data>
 		</dict>
 		<key>Headers/opus_header.h</key>
@@ -155,11 +155,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BckYtz94plsXQZ9RBWuV/1kcmxw=
+			Jq5dnyGhXi7fjRYEONlSzaoQ3v8=
 			</data>
 			<key>hash2</key>
 			<data>
-			G/OMOd/e727v31BLWFvk1IgsAeQcWojBJJlSsQpQDvg=
+			/l0h+v0SJUGVw/2fVYegY7XD18uaZeDpw8IF6K/aVlU=
 			</data>
 		</dict>
 		<key>Headers/opus_projection.h</key>
