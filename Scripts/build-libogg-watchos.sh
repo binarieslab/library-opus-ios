@@ -27,7 +27,7 @@ cd "`dirname \"$0\"`"
 REPOROOT=$(pwd)
 
 # Where we'll end up storing things in the end
-OUTPUTDIR="${REPOROOT}/dependencies"
+OUTPUTDIR="${REPOROOT}/Library"
 mkdir -p ${OUTPUTDIR}/include
 mkdir -p ${OUTPUTDIR}/lib
 
@@ -101,28 +101,28 @@ done
 echo "Build library..."
 
 # These are the libs that comprise libogg.
-OUTPUT_LIBS="libogg.a"
-for OUTPUT_LIB in ${OUTPUT_LIBS}; do
-	INPUT_LIBS=""
-	for ARCH in ${ARCHS}; do
-        if [ "${ARCH}" == "x86_64" ] || [ "${ARCH}" == "i386" ]; then
-			PLATFORM="WatchSimulator"
-		else
-			PLATFORM="WatchOS"
-		fi
-		INPUT_ARCH_LIB="${INTERDIR}/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/lib/${OUTPUT_LIB}"
-		if [ -e $INPUT_ARCH_LIB ]; then
-			INPUT_LIBS="${INPUT_LIBS} ${INPUT_ARCH_LIB}"
-		fi
-	done
-	# Combine the three architectures into a universal library.
-	if [ -n "$INPUT_LIBS"  ]; then
-		lipo -create $INPUT_LIBS \
-		-output "${OUTPUTDIR}/lib/${OUTPUT_LIB}"
+OUTPUT_LIB="libogg.a"
+INPUT_LIBS=""
+for ARCH in ${ARCHS}; do
+	if [ "${ARCH}" == "x86_64" ] || [ "${ARCH}" == "i386" ]; then
+		PLATFORM="WatchSimulator"
 	else
-		echo "$OUTPUT_LIB does not exist, skipping (are the dependencies installed?)"
+		PLATFORM="WatchOS"
+	fi
+	INPUT_ARCH_LIB="${INTERDIR}/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/lib/${OUTPUT_LIB}"
+	if [ -e $INPUT_ARCH_LIB ]; then
+		INPUT_LIBS="${INPUT_LIBS} ${INPUT_ARCH_LIB}"
 	fi
 done
+
+# Combine the three architectures into a universal library.
+if [ -n "$INPUT_LIBS"  ]; then
+	lipo -create $INPUT_LIBS \
+	-output "${OUTPUTDIR}/lib/${OUTPUT_LIB}"
+else
+	echo "$OUTPUT_LIB does not exist, skipping (are the dependencies installed?)"
+fi
+
 
 for ARCH in ${ARCHS}; do
     if [ "${ARCH}" == "x86_64" ] || [ "${ARCH}" == "i386" ]; then
@@ -138,6 +138,7 @@ for ARCH in ${ARCHS}; do
 	fi
 done
 
+mv "${OUTPUTDIR}/lib/${OUTPUT_LIB}" "${OUTPUTDIR}/lib/libogg-watchos.a"
 
 ####################
 
