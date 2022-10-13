@@ -292,8 +292,7 @@ final class TextToSpeechDecoder {
         header.append(chunkID, count: 4)
 
         var chunkSize = Int32(pcmDataLength + headerSize - 4).littleEndian
-        let chunkSizePointer = UnsafeBufferPointer(start: &chunkSize, count: 1)
-        header.append(chunkSizePointer)
+        withUnsafePointer(to: &chunkSize) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         let format = [UInt8]("WAVE".utf8)
         header.append(format, count: 4)
@@ -303,40 +302,32 @@ final class TextToSpeechDecoder {
         header.append(subchunk1ID, count: 4)
 
         var subchunk1Size = Int32(16).littleEndian
-        let subchunk1SizePointer = UnsafeBufferPointer(start: &subchunk1Size, count: 1)
-        header.append(subchunk1SizePointer)
+        withUnsafePointer(to: &subchunk1Size) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         var audioFormat = Int16(1).littleEndian
-        let audioFormatPointer = UnsafeBufferPointer(start: &audioFormat, count: 1)
-        header.append(audioFormatPointer)
+        withUnsafePointer(to: &audioFormat) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         var headerNumChannels = Int16(numChannels).littleEndian
-        let headerNumChannelsPointer = UnsafeBufferPointer(start: &headerNumChannels, count: 1)
-        header.append(headerNumChannelsPointer)
+        withUnsafePointer(to: &headerNumChannels) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         var headerSampleRate = Int32(sampleRate).littleEndian
-        let headerSampleRatePointer = UnsafeBufferPointer(start: &headerSampleRate, count: 1)
-        header.append(headerSampleRatePointer)
+        withUnsafePointer(to: &headerSampleRate) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         var byteRate = Int32(sampleRate * numChannels * bitsPerSample / 8).littleEndian
-        let byteRatePointer = UnsafeBufferPointer(start: &byteRate, count: 1)
-        header.append(byteRatePointer)
+        withUnsafePointer(to: &byteRate) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         var blockAlign = Int16(numChannels * bitsPerSample / 8).littleEndian
-        let blockAlignPointer = UnsafeBufferPointer(start: &blockAlign, count: 1)
-        header.append(blockAlignPointer)
+        withUnsafePointer(to: &blockAlign) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         var headerBitsPerSample = Int16(bitsPerSample).littleEndian
-        let headerBitsPerSamplePointer = UnsafeBufferPointer(start: &headerBitsPerSample, count: 1)
-        header.append(headerBitsPerSamplePointer)
+        withUnsafePointer(to: &headerBitsPerSample) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         // "data" sub-chunk
         let subchunk2ID = [UInt8]("data".utf8)
         header.append(subchunk2ID, count: 4)
 
         var subchunk2Size = Int32(pcmDataLength).littleEndian
-        let subchunk2SizePointer = UnsafeBufferPointer(start: &subchunk2Size, count: 1)
-        header.append(subchunk2SizePointer)
+        withUnsafePointer(to: &subchunk2Size) { header.append(UnsafeBufferPointer(start: $0, count: 1)) }
 
         pcmDataWithHeaders.append(header)
         pcmDataWithHeaders.append(pcmData)
