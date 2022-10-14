@@ -5,17 +5,42 @@ final class BLOpusTests: XCTestCase {
     
     func testEncodeDecode_whenRateIsGiven_shouldReturnOriginalData() throws {
         // Given
-        /*
-        let originalData = TestUtils.contentsOfFile(name: "audiosample.mp3")
+        let pcmData = TestUtils.contentsOfFile(name: "audiosample.mp3")
+        let sampleRate: Int32 = 48000
+        let frameSize: UInt32 = pcmData.count.calculateFrameSize(forFrame: 960)
         
         // When
-        let opusData = try BLOpus.encode(pcmData: originalData, sampleRate: 48000, frameSize: 960)
-        print(opusData.count)
-        let decodedData = try BLOpus.decode(opusData: opusData, sampleRate: 48000)
-        print(decodedData.count)
+        let opusData = try BLOpus.encode(pcmData: pcmData, sampleRate: sampleRate, frameSize: frameSize)
+        let pcmDecodedData = try BLOpus.decode(opusData: opusData, sampleRate: sampleRate)
+        
+        print("originalPcmData.count: \(pcmData.count) vs opus.count: \(opusData.count)")
+        print("pcmDecodedData.count: \(pcmDecodedData.count)")
         
         // Expected
-        XCTAssertEqual(originalData, decodedData)
-        */
+        XCTAssertTrue(opusData.count > 0)
+        XCTAssertTrue(pcmDecodedData.count > 0)
+    }
+}
+
+private extension Int {
+    func calculateFrameSize(forFrame: UInt32) -> UInt32 {
+        var upperPcmBytesPerFrame = forFrame
+        while true {
+            if UInt32(self) % upperPcmBytesPerFrame == 0 {
+                return upperPcmBytesPerFrame
+            }
+            if upperPcmBytesPerFrame < UInt32(self) {
+                break
+            }
+            upperPcmBytesPerFrame += 1
+        }
+        
+        var downerPcmBytesPerFrame = forFrame
+        while true {
+            if UInt32(self) % downerPcmBytesPerFrame == 0 {
+                return downerPcmBytesPerFrame
+            }
+            downerPcmBytesPerFrame -= 1
+        }
     }
 }

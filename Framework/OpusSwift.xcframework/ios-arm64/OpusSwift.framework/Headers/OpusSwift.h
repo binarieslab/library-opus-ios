@@ -15,9 +15,6 @@ FOUNDATION_EXPORT const unsigned char OpusSwiftVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <OpusSwift/PublicHeader.h>
 
-#import "OggHelper.h"
-#import "OpusHelper.h"
-
 #import "opus_header.h"
 
 #import "ogg.h"

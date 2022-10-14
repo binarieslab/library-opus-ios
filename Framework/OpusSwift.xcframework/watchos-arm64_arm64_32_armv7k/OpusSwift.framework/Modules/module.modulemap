@@ -4,3 +4,8 @@ framework module OpusSwift {
   export *
   module * { export * }
 }
+
+module OpusSwift.Swift {
+  header "OpusSwift-Swift.h"
+  requires objc
+}

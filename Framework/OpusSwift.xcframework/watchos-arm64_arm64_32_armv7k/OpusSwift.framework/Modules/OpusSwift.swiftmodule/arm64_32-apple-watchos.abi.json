@@ -1,0 +1,973 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "OpusSwift",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SpeechToTextEncoderProtocol",
+        "printedName": "SpeechToTextEncoderProtocol",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(pcmRate:pcmChannels:pcmBytesPerFrame:opusRate:application:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt32",
+                "printedName": "Swift.UInt32",
+                "usr": "s:s6UInt32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Application",
+                "printedName": "OpusSwift.Application",
+                "usr": "s:9OpusSwift11ApplicationO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9OpusSwift27SpeechToTextEncoderProtocolP7pcmRate0H8Channels0H13BytesPerFrame04opusI011applicationxs5Int32V_AJs6UInt32VAjA11ApplicationOtKcfc",
+            "mangledName": "$s9OpusSwift27SpeechToTextEncoderProtocolP7pcmRate0H8Channels0H13BytesPerFrame04opusI011applicationxs5Int32V_AJs6UInt32VAjA11ApplicationOtKcfc",
+            "moduleName": "OpusSwift",
+            "genericSig": "<τ_0_0 where τ_0_0 : OpusSwift.SpeechToTextEncoderProtocol>",
+            "sugared_genericSig": "<Self where Self : OpusSwift.SpeechToTextEncoderProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(pcm:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9OpusSwift27SpeechToTextEncoderProtocolP6encode3pcmy10Foundation4DataV_tKF",
+            "mangledName": "$s9OpusSwift27SpeechToTextEncoderProtocolP6encode3pcmy10Foundation4DataV_tKF",
+            "moduleName": "OpusSwift",
+            "genericSig": "<τ_0_0 where τ_0_0 : OpusSwift.SpeechToTextEncoderProtocol>",
+            "sugared_genericSig": "<Self where Self : OpusSwift.SpeechToTextEncoderProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "endstream",
+            "printedName": "endstream(fillBytes:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9OpusSwift27SpeechToTextEncoderProtocolP9endstream9fillBytes10Foundation4DataVs5Int32VSg_tKF",
+            "mangledName": "$s9OpusSwift27SpeechToTextEncoderProtocolP9endstream9fillBytes10Foundation4DataVs5Int32VSg_tKF",
+            "moduleName": "OpusSwift",
+            "genericSig": "<τ_0_0 where τ_0_0 : OpusSwift.SpeechToTextEncoderProtocol>",
+            "sugared_genericSig": "<Self where Self : OpusSwift.SpeechToTextEncoderProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:9OpusSwift27SpeechToTextEncoderProtocolP",
+        "mangledName": "$s9OpusSwift27SpeechToTextEncoderProtocolP",
+        "moduleName": "OpusSwift",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SpeechToTextEncoder",
+        "printedName": "SpeechToTextEncoder",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(pcmRate:pcmChannels:pcmBytesPerFrame:opusRate:application:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SpeechToTextEncoder",
+                "printedName": "OpusSwift.SpeechToTextEncoder",
+                "usr": "s:9OpusSwift19SpeechToTextEncoderC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UInt32",
+                "printedName": "Swift.UInt32",
+                "usr": "s:s6UInt32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int32",
+                "printedName": "Swift.Int32",
+                "usr": "s:s5Int32V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Application",
+                "printedName": "OpusSwift.Application",
+                "usr": "s:9OpusSwift11ApplicationO"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9OpusSwift19SpeechToTextEncoderC7pcmRate0G8Channels0G13BytesPerFrame04opusH011applicationACs5Int32V_AJs6UInt32VAjA11ApplicationOtKcfc",
+            "mangledName": "$s9OpusSwift19SpeechToTextEncoderC7pcmRate0G8Channels0G13BytesPerFrame04opusH011applicationACs5Int32V_AJs6UInt32VAjA11ApplicationOtKcfc",
+            "moduleName": "OpusSwift",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(pcm:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9OpusSwift19SpeechToTextEncoderC6encode3pcmy10Foundation4DataV_tKF",
+            "mangledName": "$s9OpusSwift19SpeechToTextEncoderC6encode3pcmy10Foundation4DataV_tKF",
+            "moduleName": "OpusSwift",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "endstream",
+            "printedName": "endstream(fillBytes:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int32?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int32",
+                    "printedName": "Swift.Int32",
+                    "usr": "s:s5Int32V"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9OpusSwift19SpeechToTextEncoderC9endstream9fillBytes10Foundation4DataVs5Int32VSg_tKF",
+            "mangledName": "$s9OpusSwift19SpeechToTextEncoderC9endstream9fillBytes10Foundation4DataVs5Int32VSg_tKF",
+            "moduleName": "OpusSwift",
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9OpusSwift19SpeechToTextEncoderC",
+        "mangledName": "$s9OpusSwift19SpeechToTextEncoderC",
+        "moduleName": "OpusSwift",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "SpeechToTextEncoderProtocol",
+            "printedName": "SpeechToTextEncoderProtocol",
+            "usr": "s:9OpusSwift27SpeechToTextEncoderProtocolP",
+            "mangledName": "$s9OpusSwift27SpeechToTextEncoderProtocolP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Application",
+        "printedName": "Application",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "voip",
+            "printedName": "voip",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OpusSwift.Application.Type) -> OpusSwift.Application",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Application",
+                    "printedName": "OpusSwift.Application",
+                    "usr": "s:9OpusSwift11ApplicationO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OpusSwift.Application.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Application",
+                        "printedName": "OpusSwift.Application",
+                        "usr": "s:9OpusSwift11ApplicationO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:9OpusSwift11ApplicationO4voipyA2CmF",
+            "mangledName": "$s9OpusSwift11ApplicationO4voipyA2CmF",
+            "moduleName": "OpusSwift"
+          },
+          {
+            "kind": "Var",
+            "name": "audio",
+            "printedName": "audio",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OpusSwift.Application.Type) -> OpusSwift.Application",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Application",
+                    "printedName": "OpusSwift.Application",
+                    "usr": "s:9OpusSwift11ApplicationO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OpusSwift.Application.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Application",
+                        "printedName": "OpusSwift.Application",
+                        "usr": "s:9OpusSwift11ApplicationO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:9OpusSwift11ApplicationO5audioyA2CmF",
+            "mangledName": "$s9OpusSwift11ApplicationO5audioyA2CmF",
+            "moduleName": "OpusSwift"
+          },
+          {
+            "kind": "Var",
+            "name": "lowDelay",
+            "printedName": "lowDelay",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OpusSwift.Application.Type) -> OpusSwift.Application",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Application",
+                    "printedName": "OpusSwift.Application",
+                    "usr": "s:9OpusSwift11ApplicationO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OpusSwift.Application.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Application",
+                        "printedName": "OpusSwift.Application",
+                        "usr": "s:9OpusSwift11ApplicationO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:9OpusSwift11ApplicationO8lowDelayyA2CmF",
+            "mangledName": "$s9OpusSwift11ApplicationO8lowDelayyA2CmF",
+            "moduleName": "OpusSwift"
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Application",
+                "printedName": "OpusSwift.Application",
+                "usr": "s:9OpusSwift11ApplicationO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Application",
+                "printedName": "OpusSwift.Application",
+                "usr": "s:9OpusSwift11ApplicationO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9OpusSwift11ApplicationO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s9OpusSwift11ApplicationO2eeoiySbAC_ACtFZ",
+            "moduleName": "OpusSwift",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9OpusSwift11ApplicationO9hashValueSivp",
+            "mangledName": "$s9OpusSwift11ApplicationO9hashValueSivp",
+            "moduleName": "OpusSwift",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9OpusSwift11ApplicationO9hashValueSivg",
+                "mangledName": "$s9OpusSwift11ApplicationO9hashValueSivg",
+                "moduleName": "OpusSwift",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9OpusSwift11ApplicationO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s9OpusSwift11ApplicationO4hash4intoys6HasherVz_tF",
+            "moduleName": "OpusSwift",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:9OpusSwift11ApplicationO",
+        "mangledName": "$s9OpusSwift11ApplicationO",
+        "moduleName": "OpusSwift",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "OpusSwift",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TextToSpeechDecoderProtocol",
+        "printedName": "TextToSpeechDecoderProtocol",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "pcmDataWithHeaders",
+            "printedName": "pcmDataWithHeaders",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9OpusSwift27TextToSpeechDecoderProtocolP18pcmDataWithHeaders10Foundation0I0Vvp",
+            "mangledName": "$s9OpusSwift27TextToSpeechDecoderProtocolP18pcmDataWithHeaders10Foundation0I0Vvp",
+            "moduleName": "OpusSwift",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9OpusSwift27TextToSpeechDecoderProtocolP18pcmDataWithHeaders10Foundation0I0Vvg",
+                "mangledName": "$s9OpusSwift27TextToSpeechDecoderProtocolP18pcmDataWithHeaders10Foundation0I0Vvg",
+                "moduleName": "OpusSwift",
+                "genericSig": "<τ_0_0 where τ_0_0 : OpusSwift.TextToSpeechDecoderProtocol>",
+                "sugared_genericSig": "<Self where Self : OpusSwift.TextToSpeechDecoderProtocol>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(audioData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9OpusSwift27TextToSpeechDecoderProtocolP9audioDatax10Foundation0I0V_tKcfc",
+            "mangledName": "$s9OpusSwift27TextToSpeechDecoderProtocolP9audioDatax10Foundation0I0V_tKcfc",
+            "moduleName": "OpusSwift",
+            "genericSig": "<τ_0_0 where τ_0_0 : OpusSwift.TextToSpeechDecoderProtocol>",
+            "sugared_genericSig": "<Self where Self : OpusSwift.TextToSpeechDecoderProtocol>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:9OpusSwift27TextToSpeechDecoderProtocolP",
+        "mangledName": "$s9OpusSwift27TextToSpeechDecoderProtocolP",
+        "moduleName": "OpusSwift",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TextToSpeechDecoder",
+        "printedName": "TextToSpeechDecoder",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "pcmDataWithHeaders",
+            "printedName": "pcmDataWithHeaders",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9OpusSwift19TextToSpeechDecoderC18pcmDataWithHeaders10Foundation0H0Vvp",
+            "mangledName": "$s9OpusSwift19TextToSpeechDecoderC18pcmDataWithHeaders10Foundation0H0Vvp",
+            "moduleName": "OpusSwift",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9OpusSwift19TextToSpeechDecoderC18pcmDataWithHeaders10Foundation0H0Vvg",
+                "mangledName": "$s9OpusSwift19TextToSpeechDecoderC18pcmDataWithHeaders10Foundation0H0Vvg",
+                "moduleName": "OpusSwift",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9OpusSwift19TextToSpeechDecoderC18pcmDataWithHeaders10Foundation0H0Vvs",
+                "mangledName": "$s9OpusSwift19TextToSpeechDecoderC18pcmDataWithHeaders10Foundation0H0Vvs",
+                "moduleName": "OpusSwift",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9OpusSwift19TextToSpeechDecoderC18pcmDataWithHeaders10Foundation0H0VvM",
+                "mangledName": "$s9OpusSwift19TextToSpeechDecoderC18pcmDataWithHeaders10Foundation0H0VvM",
+                "moduleName": "OpusSwift",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(audioData:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TextToSpeechDecoder",
+                "printedName": "OpusSwift.TextToSpeechDecoder",
+                "usr": "s:9OpusSwift19TextToSpeechDecoderC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9OpusSwift19TextToSpeechDecoderC9audioDataAC10Foundation0H0V_tKcfc",
+            "mangledName": "$s9OpusSwift19TextToSpeechDecoderC9audioDataAC10Foundation0H0V_tKcfc",
+            "moduleName": "OpusSwift",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9OpusSwift19TextToSpeechDecoderC",
+        "mangledName": "$s9OpusSwift19TextToSpeechDecoderC",
+        "moduleName": "OpusSwift",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "TextToSpeechDecoderProtocol",
+            "printedName": "TextToSpeechDecoderProtocol",
+            "usr": "s:9OpusSwift27TextToSpeechDecoderProtocolP",
+            "mangledName": "$s9OpusSwift27TextToSpeechDecoderProtocolP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1281,
+      "length": 4,
+      "value": "3832"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "BooleanLiteral",
+      "offset": 11368,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "BooleanLiteral",
+      "offset": 12405,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16927,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16947,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16970,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16927,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16947,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16970,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16927,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16947,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/SpeechToTextEncoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16970,
+      "length": 3,
+      "value": "255"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 608,
+      "length": 3,
+      "value": "960"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 614,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1170,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1253,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1351,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1425,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1524,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1628,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1718,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1828,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1920,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2032,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2071,
+      "length": 5,
+      "value": "48000"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2176,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2285,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/marcelosarquis\/Developer\/BinariesLab\/library-opus-ios\/OpusSwift\/Classes\/TextToSpeechDecoder.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2377,
+      "length": 1,
+      "value": "0"
+    }
+  ]
+}
