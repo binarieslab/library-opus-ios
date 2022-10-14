@@ -11,25 +11,18 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/OggHelper.h</key>
+		<key>Headers/OpusSwift-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OJm2bhXhjG5C4iLIkOPeUMDEvxl4EtAQoVk+0DLXDKI=
-			</data>
-		</dict>
-		<key>Headers/OpusHelper.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fnA6/BWAodgTyujrejLxkrWe7D9ThKSHcSSe9+D6DCk=
+			upQVc1Amq9CxQcGLJMXJ1t5tEZdp4mTY+BNIzltP8fs=
 			</data>
 		</dict>
 		<key>Headers/OpusSwift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u0xV1+WhH3WRIqCe9truxTK2IviFHbwlgNfK5JDWHxc=
+			GfCgd2D+eC3Y7kxyU4Hr1eyY2ifk5gv9Am1GH8FyNpo=
 			</data>
 		</dict>
 		<key>Headers/config_types.h</key>
@@ -95,11 +88,81 @@
 			O7q2pdMePCXGCAJSsEKvuHAo4///EA4+AoVkiyULcPQ=
 			</data>
 		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UhrHkeMhAZft/lD51yRsUHR+LNeh7MSRumGRDZNvJTs=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oq8PiInl+A7zzqqyqqmLIDd1JuUDyghkTe3iOiW0SHI=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FktUkM2myXGreYu5gA57JkntP/ZIswXovbr7itSXRnE=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oq8PiInl+A7zzqqyqqmLIDd1JuUDyghkTe3iOiW0SHI=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			53zyD0+B2WE60Uem/NQPtFV8mX0FUKna6dyTHOJLO7Y=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UhrHkeMhAZft/lD51yRsUHR+LNeh7MSRumGRDZNvJTs=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OOYmTwTfTMQVwCxFfioxfkO7Lvz3V0xY4o0tCmqoaLw=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5wsRpXM8vb7nDRX9UsrVS5r7cahgjWr+TSn1h7qKM3Q=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OOYmTwTfTMQVwCxFfioxfkO7Lvz3V0xY4o0tCmqoaLw=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cYc1fNVCJm4gwPbbgEUPMtDDbndgz8sWHN84WngWMkI=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TSkY/4ub0a+fZIbVa2Fxv7VGPlDkXL4MZ0EJVKPlKMY=
+			szDylIEo5KxU7D/ydjmvniyuUg8UqUYXHKQUcOqYgqg=
 			</data>
 		</dict>
 		<key>Resources/Info.plist</key>

@@ -4,17 +4,13 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Headers/OggHelper.h</key>
+		<key>Headers/OpusSwift-Swift.h</key>
 		<data>
-		N6Mim3YqMEzlgugAt6QCs4mOhGk=
-		</data>
-		<key>Headers/OpusHelper.h</key>
-		<data>
-		MsQ9VeyAWVIauNRIQCTFmBbzZec=
+		Z+pZFOLaR9OXEP7fX8os9QjkEAE=
 		</data>
 		<key>Headers/OpusSwift.h</key>
 		<data>
-		kZ/YpfeY6SHYIOw+rIVPEayaH2E=
+		ejIiJyJheU+0h9BDATdcHzB+J/Y=
 		</data>
 		<key>Headers/config_types.h</key>
 		<data>
@@ -56,32 +52,45 @@
 		<data>
 		9IX/l7keF8F3o/kOq+iF1eIP3WQ=
 		</data>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.abi.json</key>
+		<data>
+		bahxxWx2BfXtvy0xAWK9rz2njAE=
+		</data>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
+		<data>
+		wF70BvaHHSDjgV00GIS+NEthF7c=
+		</data>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.swiftdoc</key>
+		<data>
+		t93tbkLCxhSnCaoNGr3a5BDo7Jo=
+		</data>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.swiftinterface</key>
+		<data>
+		wF70BvaHHSDjgV00GIS+NEthF7c=
+		</data>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.swiftmodule</key>
+		<data>
+		r1LqLjT8kAb2dDolJEyyNPaNm1Y=
+		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		mEaTQu/g4VTTBQXRoWvuP/NFTcs=
+		7orVdQfJLOWkObCLQGhTzTKBbsE=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/OggHelper.h</key>
+		<key>Headers/OpusSwift-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OJm2bhXhjG5C4iLIkOPeUMDEvxl4EtAQoVk+0DLXDKI=
-			</data>
-		</dict>
-		<key>Headers/OpusHelper.h</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			fnA6/BWAodgTyujrejLxkrWe7D9ThKSHcSSe9+D6DCk=
+			pWdv3VCekkAJehO0rKWrMK3G8KTzBP2IkKyakfVhtYk=
 			</data>
 		</dict>
 		<key>Headers/OpusSwift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u0xV1+WhH3WRIqCe9truxTK2IviFHbwlgNfK5JDWHxc=
+			GfCgd2D+eC3Y7kxyU4Hr1eyY2ifk5gv9Am1GH8FyNpo=
 			</data>
 		</dict>
 		<key>Headers/config_types.h</key>
@@ -147,11 +156,46 @@
 			O7q2pdMePCXGCAJSsEKvuHAo4///EA4+AoVkiyULcPQ=
 			</data>
 		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UhrHkeMhAZft/lD51yRsUHR+LNeh7MSRumGRDZNvJTs=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ka1jqMuKcIk5J0pDzguwIgrBHX4ISf3blnKdSQ9rSxQ=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5IAVW3kdjWrCTal4Xu+zqydNM9KX6dT/xRhsjWZA7Xw=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ka1jqMuKcIk5J0pDzguwIgrBHX4ISf3blnKdSQ9rSxQ=
+			</data>
+		</dict>
+		<key>Modules/OpusSwift.swiftmodule/arm64-apple-ios.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+T0nBcfsexm9v4aq+DCnrqEZaoml/WI2d4v5hK075Ws=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TSkY/4ub0a+fZIbVa2Fxv7VGPlDkXL4MZ0EJVKPlKMY=
+			szDylIEo5KxU7D/ydjmvniyuUg8UqUYXHKQUcOqYgqg=
 			</data>
 		</dict>
 	</dict>

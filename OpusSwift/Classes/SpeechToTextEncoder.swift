@@ -1,21 +1,19 @@
 //
 //  SpeechToTextEncoder.swift
-//  
+//  OpusSwift
 //
-//  Created by Marcelo Sarquis on 12.10.22.
+//  Created by Marcelo Sarquis on 14.10.22.
 //
 
 import Foundation
-import OpusSwift
 
-protocol SpeechToTextEncoderProtocol {
+public protocol SpeechToTextEncoderProtocol {
     init(pcmRate: Int32, pcmChannels: Int32, pcmBytesPerFrame: UInt32, opusRate: Int32, application: Application) throws
     func encode(pcm: Data) throws
     func endstream(fillBytes: Int32?) throws -> Data
-    func bitstream(flush: Bool, fillBytes: Int32?) -> Data
 }
 
-final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
+public final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
 
     // This implementation uses the libopus and libogg libraries to encode and encapsulate audio.
     // For more information about these libraries, refer to their online documentation.
@@ -35,7 +33,7 @@ final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
     private var pcmCache = Data()          // cache for pcm audio that is too short to encode
     private var oggCache = Data()          // cache for ogg stream
 
-    init(pcmRate: Int32, pcmChannels: Int32, pcmBytesPerFrame: UInt32, opusRate: Int32, application: Application) throws {
+    public init(pcmRate: Int32, pcmChannels: Int32, pcmBytesPerFrame: UInt32, opusRate: Int32, application: Application) throws {
         // avoid resampling
         guard pcmRate == opusRate else {
             print("Resampling is not supported. Please ensure that the PCM and Opus sample rates match.")
@@ -76,7 +74,7 @@ final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
         opus_encoder_destroy(encoder)
     }
 
-    func encode(pcm: Data) throws {
+    public func encode(pcm: Data) throws {
         guard let inputDataBytes = pcm.withUnsafeBytes({ $0.baseAddress?.assumingMemoryBound(to: Int16.self) }) else {
             throw OpusError.allocationFailure
         }
@@ -136,7 +134,7 @@ final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
         }
     }
 
-    func endstream(fillBytes: Int32? = nil) throws -> Data {
+    public func endstream(fillBytes: Int32? = nil) throws -> Data {
         // compute granule position using cache
         let pcmFrames = pcmCache.count / Int(pcmBytesPerFrame)
         granulePosition += Int64(pcmFrames * 48000 / Int(opusRate))
@@ -177,13 +175,6 @@ final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
         }
 
         return bitstream(flush: true)
-    }
-
-    func bitstream(flush: Bool = false, fillBytes: Int32? = nil) -> Data {
-        assemblePages(flush: flush, fillBytes: fillBytes)
-        let bitstream = oggCache
-        oggCache = Data()
-        return bitstream
     }
 }
 
@@ -337,6 +328,13 @@ private extension SpeechToTextEncoder {
             oggCache.append(page.body, count: page.body_len)
         }
     }
+    
+    func bitstream(flush: Bool = false, fillBytes: Int32? = nil) -> Data {
+        assemblePages(flush: flush, fillBytes: fillBytes)
+        let bitstream = oggCache
+        oggCache = Data()
+        return bitstream
+    }
 }
 
 // MARK: - Header
@@ -459,7 +457,7 @@ private enum ChannelMappingFamily: UInt8 {
 }
 
 // MARK: - Application
-enum Application {
+public enum Application {
     case voip
     case audio
     case lowDelay

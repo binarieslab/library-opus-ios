@@ -1,16 +1,20 @@
 //
 //  TextToSpeechDecoder.swift
-//  
+//  OpusSwift
 //
-//  Created by Marcelo Sarquis on 12.10.22.
+//  Created by Marcelo Sarquis on 14.10.22.
 //
 
 import Foundation
-import OpusSwift
 
-final class TextToSpeechDecoder {
+public protocol TextToSpeechDecoderProtocol {
+    var pcmDataWithHeaders: Data { get }
+    init(audioData: Data) throws
+}
 
-    var pcmDataWithHeaders = Data()             // object containing the decoded pcm data with wav headers
+public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
+
+    public var pcmDataWithHeaders: Data = Data()             // object containing the decoded pcm data with wav headers
 
     // swiftlint:disable:next type_name
     private typealias opus_decoder = OpaquePointer
@@ -40,7 +44,7 @@ final class TextToSpeechDecoder {
     private var frameSize: Int32 = 0            // number of samples decoded
     private var pcmData = Data()                // decoded pcm data
 
-    init(audioData: Data) throws {
+    public init(audioData: Data) throws {
         // set properties
         streamState = ogg_stream_state()
         page = ogg_page()

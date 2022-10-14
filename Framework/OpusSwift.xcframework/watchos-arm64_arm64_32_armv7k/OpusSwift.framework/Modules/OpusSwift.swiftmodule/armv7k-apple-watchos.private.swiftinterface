@@ -1,0 +1,41 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target armv7k-apple-watchos6.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name OpusSwift
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+@_exported import OpusSwift
+import Swift
+import _Concurrency
+import _StringProcessing
+public protocol SpeechToTextEncoderProtocol {
+  init(pcmRate: Swift.Int32, pcmChannels: Swift.Int32, pcmBytesPerFrame: Swift.UInt32, opusRate: Swift.Int32, application: OpusSwift.Application) throws
+  func encode(pcm: Foundation.Data) throws
+  func endstream(fillBytes: Swift.Int32?) throws -> Foundation.Data
+}
+final public class SpeechToTextEncoder : OpusSwift.SpeechToTextEncoderProtocol {
+  public init(pcmRate: Swift.Int32, pcmChannels: Swift.Int32, pcmBytesPerFrame: Swift.UInt32, opusRate: Swift.Int32, application: OpusSwift.Application) throws
+  @objc deinit
+  final public func encode(pcm: Foundation.Data) throws
+  final public func endstream(fillBytes: Swift.Int32? = nil) throws -> Foundation.Data
+}
+public enum Application {
+  case voip
+  case audio
+  case lowDelay
+  public static func == (a: OpusSwift.Application, b: OpusSwift.Application) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol TextToSpeechDecoderProtocol {
+  var pcmDataWithHeaders: Foundation.Data { get }
+  init(audioData: Foundation.Data) throws
+}
+final public class TextToSpeechDecoder : OpusSwift.TextToSpeechDecoderProtocol {
+  final public var pcmDataWithHeaders: Foundation.Data
+  public init(audioData: Foundation.Data) throws
+  @objc deinit
+}
+extension OpusSwift.Application : Swift.Equatable {}
+extension OpusSwift.Application : Swift.Hashable {}
