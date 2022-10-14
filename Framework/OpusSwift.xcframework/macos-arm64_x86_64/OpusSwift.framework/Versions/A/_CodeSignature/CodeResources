@@ -92,70 +92,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			UhrHkeMhAZft/lD51yRsUHR+LNeh7MSRumGRDZNvJTs=
+			Pr5SbanWYY+l6Zj4MPeCdbxkZRoHIwwhofI4hC05sqg=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oq8PiInl+A7zzqqyqqmLIDd1JuUDyghkTe3iOiW0SHI=
+			B1LmNExKRkZoWWINDZXQ7wCtcLJgxcCTZVFB3Oa5B94=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FktUkM2myXGreYu5gA57JkntP/ZIswXovbr7itSXRnE=
+			82437Z+WVsnwP/gfQLTYycCQ36tG1oF8lMyaQzFtH1o=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oq8PiInl+A7zzqqyqqmLIDd1JuUDyghkTe3iOiW0SHI=
+			B1LmNExKRkZoWWINDZXQ7wCtcLJgxcCTZVFB3Oa5B94=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/arm64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			53zyD0+B2WE60Uem/NQPtFV8mX0FUKna6dyTHOJLO7Y=
+			aP4efuNTotStTTQ+rt3ToQcQhR7f8EyhhI8Su+q5oNM=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UhrHkeMhAZft/lD51yRsUHR+LNeh7MSRumGRDZNvJTs=
+			Pr5SbanWYY+l6Zj4MPeCdbxkZRoHIwwhofI4hC05sqg=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OOYmTwTfTMQVwCxFfioxfkO7Lvz3V0xY4o0tCmqoaLw=
+			xIaQzRyakr+qJbliXXKXHDfq7OuXM0oAgqcs4dhWH+s=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5wsRpXM8vb7nDRX9UsrVS5r7cahgjWr+TSn1h7qKM3Q=
+			HHQ/gYM99AP5p4qjvB2QO+kwchI/HvNv2cOMUv3RHUY=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OOYmTwTfTMQVwCxFfioxfkO7Lvz3V0xY4o0tCmqoaLw=
+			xIaQzRyakr+qJbliXXKXHDfq7OuXM0oAgqcs4dhWH+s=
 			</data>
 		</dict>
 		<key>Modules/OpusSwift.swiftmodule/x86_64-apple-macos.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cYc1fNVCJm4gwPbbgEUPMtDDbndgz8sWHN84WngWMkI=
+			ic+c0vYL9lqNymJngcGma6XGklFp2ByL41LZhZp3TZI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -1,5 +1,5 @@
 //
-//  SpeechToTextEncoder.swift
+//  OpusEncoder.swift
 //  OpusSwift
 //
 //  Created by Marcelo Sarquis on 14.10.22.
@@ -7,33 +7,40 @@
 
 import Foundation
 
-public protocol SpeechToTextEncoderProtocol {
-    init(pcmRate: Int32, pcmChannels: Int32, pcmBytesPerFrame: UInt32, opusRate: Int32, application: Application) throws
-    func encode(pcm: Data) throws
-    func endstream(fillBytes: Int32?) throws -> Data
+public protocol OpusEncoderProtocol {
+    init(pcmRate: Int32, pcmChannels: Int32, pcmBytesPerFrame: UInt32, opusRate: Int32, application: OpusApplication) throws
+    func encode(pcm: Data) throws -> Data
 }
 
-public final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
+/// This implementation uses the libopus and libogg libraries to encode and encapsulate audio.
+/// For more information about these libraries, refer to their online documentation.
+/// (The opus-tools source code was also helpful to verify the implementation.)
+public final class OpusEncoder: OpusEncoderProtocol {
 
-    // This implementation uses the libopus and libogg libraries to encode and encapsulate audio.
-    // For more information about these libraries, refer to their online documentation.
-    // (The opus-tools source code was also helpful to verify the implementation.)
-
-    // swiftlint:disable:next type_name
     private typealias opus_encoder = OpaquePointer
 
-    private var stream: ogg_stream_state   // state of the ogg stream
-    private var encoder: opus_encoder      // encoder to convert pcm to opus
-    private var granulePosition: Int64     // total number of encoded pcm samples in the stream
-    private var packetNumber: Int64        // total number of packets encoded in the stream
-    private let frameSize: Int32           // number of pcm frames to encode in an opus frame (20ms)
-    private let maxFrameSize: Int32 = 3832 // maximum size of an opus frame
-    private let opusRate: Int32            // desired sample rate of the opus audio
-    private let pcmBytesPerFrame: UInt32   // bytes per frame in the pcm audio
-    private var pcmCache = Data()          // cache for pcm audio that is too short to encode
-    private var oggCache = Data()          // cache for ogg stream
+    /// state of the ogg stream
+    private var stream: ogg_stream_state
+    /// encoder to convert pcm to opus/
+    private var encoder: opus_encoder
+    /// total number of encoded pcm samples in the stream/
+    private var granulePosition: Int64
+    /// total number of packets encoded in the stream
+    private var packetNumber: Int64
+    /// number of pcm frames to encode in an opus frame (20ms)/
+    private let frameSize: Int32
+    /// maximum size of an opus frame/
+    private let maxFrameSize: Int32 = 3832
+    /// desired sample rate of the opus audio/
+    private let opusRate: Int32
+    /// bytes per frame in the pcm audio/
+    private let pcmBytesPerFrame: UInt32
+    /// cache for pcm audio that is too short to encode/
+    private var pcmCache = Data()
+    /// cache for ogg stream/
+    private var oggCache = Data()
 
-    public init(pcmRate: Int32, pcmChannels: Int32, pcmBytesPerFrame: UInt32, opusRate: Int32, application: Application) throws {
+    public init(pcmRate: Int32, pcmChannels: Int32, pcmBytesPerFrame: UInt32, opusRate: Int32, application: OpusApplication) throws {
         // avoid resampling
         guard pcmRate == opusRate else {
             print("Resampling is not supported. Please ensure that the PCM and Opus sample rates match.")
@@ -61,8 +68,12 @@ public final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
 
         // initialize opus encoder
         encoder = opus_encoder_create(opusRate, pcmChannels, application.rawValue, &status)
-        guard let error = OpusError(rawValue: status) else { throw OpusError.internalError }
-        guard error == .okay else { throw error }
+        guard let error = OpusError(rawValue: status) else {
+            throw OpusError.internalError
+        }
+        guard error == .okay else {
+            throw error
+        }
 
         // add opus headers to ogg stream
         try addOpusHeader(channels: UInt8(pcmChannels), rate: UInt32(pcmRate))
@@ -74,7 +85,7 @@ public final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
         opus_encoder_destroy(encoder)
     }
 
-    public func encode(pcm: Data) throws {
+    public func encode(pcm: Data) throws -> Data {
         guard let inputDataBytes = pcm.withUnsafeBytes({ $0.baseAddress?.assumingMemoryBound(to: Int16.self) }) else {
             throw OpusError.allocationFailure
         }
@@ -132,53 +143,12 @@ public final class SpeechToTextEncoder: SpeechToTextEncoderProtocol {
         pcm.withMemoryRebound(to: UInt8.self, capacity: count) { data in
             pcmCache.append(data, count: count)
         }
-    }
-
-    public func endstream(fillBytes: Int32? = nil) throws -> Data {
-        // compute granule position using cache
-        let pcmFrames = pcmCache.count / Int(pcmBytesPerFrame)
-        granulePosition += Int64(pcmFrames * 48000 / Int(opusRate))
-
-        // add padding to cache to construct complete frame
-        let toAppend = Int(frameSize) * Int(pcmBytesPerFrame) - pcmCache.count
-        let padding = [UInt8](repeating: 0, count: toAppend)
-        pcmCache.append(padding, count: toAppend)
-
-        // encode an opus frame
-        var opus = [UInt8](repeating: 0, count: Int(maxFrameSize))
-        guard let cache = pcmCache.withUnsafeBytes({ $0.baseAddress?.assumingMemoryBound(to: Int16.self) }) else {
-            throw OpusError.allocationFailure
-        }
         
-        let numBytes = opus_encode(encoder, cache, frameSize, &opus, maxFrameSize)
-        guard numBytes >= 0 else {
-            throw OpusError.internalError
-        }
-        
-        let packetPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: opus.count)
-        packetPointer.initialize(from: &opus, count: opus.count)
-        
-        // construct ogg packet with opus frame
-        var packet = ogg_packet()
-        packet.packet = packetPointer
-        packet.bytes = Int(numBytes)
-        packet.b_o_s = 0
-        packet.e_o_s = 1
-        packet.granulepos = granulePosition
-        packet.packetno = Int64(packetNumber)
-        packetNumber += 1
-
-        // add packet to ogg stream
-        let status = ogg_stream_packetin(&stream, &packet)
-        guard status == 0 else {
-            throw OggError.internalError
-        }
-
-        return bitstream(flush: true)
+        return try endstream()
     }
 }
 
-private extension SpeechToTextEncoder {
+private extension OpusEncoder {
     func addOpusHeader(channels: UInt8, rate: UInt32) throws {
         // construct opus header
         let header = Header(
@@ -312,10 +282,14 @@ private extension SpeechToTextEncoder {
 
             // assemble accumulated packets into an ogg page
             switch (flush, fillBytes) {
-            case (true, .some(let fillBytes)): status = ogg_stream_flush_fill(&stream, &page, fillBytes)
-            case (true, .none): status = ogg_stream_flush(&stream, &page)
-            case (false, .some(let fillBytes)): status = ogg_stream_pageout_fill(&stream, &page, fillBytes)
-            case (false, .none): status = ogg_stream_pageout(&stream, &page)
+            case (true, .some(let fillBytes)):
+                status = ogg_stream_flush_fill(&stream, &page, fillBytes)
+            case (true, .none):
+                status = ogg_stream_flush(&stream, &page)
+            case (false, .some(let fillBytes)):
+                status = ogg_stream_pageout_fill(&stream, &page, fillBytes)
+            case (false, .none):
+                status = ogg_stream_pageout(&stream, &page)
             }
 
             // break when all packet data has been accumulated into pages
@@ -334,6 +308,49 @@ private extension SpeechToTextEncoder {
         let bitstream = oggCache
         oggCache = Data()
         return bitstream
+    }
+    
+    func endstream(fillBytes: Int32? = nil) throws -> Data {
+        // compute granule position using cache
+        let pcmFrames = pcmCache.count / Int(pcmBytesPerFrame)
+        granulePosition += Int64(pcmFrames * 48000 / Int(opusRate))
+
+        // add padding to cache to construct complete frame
+        let toAppend = Int(frameSize) * Int(pcmBytesPerFrame) - pcmCache.count
+        let padding = [UInt8](repeating: 0, count: toAppend)
+        pcmCache.append(padding, count: toAppend)
+
+        // encode an opus frame
+        var opus = [UInt8](repeating: 0, count: Int(maxFrameSize))
+        guard let cache = pcmCache.withUnsafeBytes({ $0.baseAddress?.assumingMemoryBound(to: Int16.self) }) else {
+            throw OpusError.allocationFailure
+        }
+        
+        let numBytes = opus_encode(encoder, cache, frameSize, &opus, maxFrameSize)
+        guard numBytes >= 0 else {
+            throw OpusError.internalError
+        }
+        
+        let packetPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: opus.count)
+        packetPointer.initialize(from: &opus, count: opus.count)
+        
+        // construct ogg packet with opus frame
+        var packet = ogg_packet()
+        packet.packet = packetPointer
+        packet.bytes = Int(numBytes)
+        packet.b_o_s = 0
+        packet.e_o_s = 1
+        packet.granulepos = granulePosition
+        packet.packetno = Int64(packetNumber)
+        packetNumber += 1
+
+        // add packet to ogg stream
+        let status = ogg_stream_packetin(&stream, &packet)
+        guard status == 0 else {
+            throw OggError.internalError
+        }
+
+        return bitstream(flush: true)
     }
 }
 
@@ -402,7 +419,12 @@ private class CommentHeader {
         magicSignature = [ 0x4f, 0x70, 0x75, 0x73, 0x54, 0x61, 0x67, 0x73 ] // "OpusTags"
         vendorString = String(validatingUTF8: opus_get_version_string())!
         vendorStringLength = UInt32(vendorString.count)
-        userComments = [Comment(tag: "ENCODER", value: "IBM Mobile Innovation Lab")]
+        userComments = [
+            Comment(
+                tag: "ENCODER",
+                value: "IBM Mobile Innovation Lab"
+            )
+        ]
         userCommentListLength = UInt32(userComments.count)
     }
 
@@ -454,73 +476,4 @@ private enum ChannelMappingFamily: UInt8 {
     case rtp = 0
     case vorbis = 1
     case undefined = 255
-}
-
-// MARK: - Application
-public enum Application {
-    case voip
-    case audio
-    case lowDelay
-
-    var rawValue: Int32 {
-        switch self {
-        case .voip: return OPUS_APPLICATION_VOIP
-        case .audio: return OPUS_APPLICATION_AUDIO
-        case .lowDelay: return OPUS_APPLICATION_RESTRICTED_LOWDELAY
-        }
-    }
-
-    init?(rawValue: Int32) {
-        switch rawValue {
-        case OPUS_APPLICATION_VOIP: self = .voip
-        case OPUS_APPLICATION_AUDIO: self = .audio
-        case OPUS_APPLICATION_RESTRICTED_LOWDELAY: self = .lowDelay
-        default: return nil
-        }
-    }
-}
-
-// MARK: - OpusError
-enum OpusError: Error {
-    case okay
-    case badArgument
-    case bufferTooSmall
-    case internalError
-    case invalidPacket
-    case unimplemented
-    case invalidState
-    case allocationFailure
-
-    var rawValue: Int32 {
-        switch self {
-        case .okay: return OPUS_OK
-        case .badArgument: return OPUS_BAD_ARG
-        case .bufferTooSmall: return OPUS_BUFFER_TOO_SMALL
-        case .internalError: return OPUS_INTERNAL_ERROR
-        case .invalidPacket: return OPUS_INVALID_PACKET
-        case .unimplemented: return OPUS_UNIMPLEMENTED
-        case .invalidState: return OPUS_INVALID_STATE
-        case .allocationFailure: return OPUS_ALLOC_FAIL
-        }
-    }
-
-    init?(rawValue: Int32) {
-        switch rawValue {
-        case OPUS_OK: self = .okay
-        case OPUS_BAD_ARG: self = .badArgument
-        case OPUS_BUFFER_TOO_SMALL: self = .bufferTooSmall
-        case OPUS_INTERNAL_ERROR: self = .internalError
-        case OPUS_INVALID_PACKET: self = .invalidPacket
-        case OPUS_UNIMPLEMENTED: self = .unimplemented
-        case OPUS_INVALID_STATE: self = .invalidState
-        case OPUS_ALLOC_FAIL: self = .allocationFailure
-        default: return nil
-        }
-    }
-}
-
-// MARK: - OggError
-enum OggError: Error {
-    case outOfSync
-    case internalError
 }

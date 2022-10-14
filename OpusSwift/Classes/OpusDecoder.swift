@@ -1,5 +1,5 @@
 //
-//  TextToSpeechDecoder.swift
+//  OpusDecoder.swift
 //  OpusSwift
 //
 //  Created by Marcelo Sarquis on 14.10.22.
@@ -7,44 +7,66 @@
 
 import Foundation
 
-public protocol TextToSpeechDecoderProtocol {
-    var pcmDataWithHeaders: Data { get }
-    init(audioData: Data) throws
+public protocol OpusDecoderProtocol {
+    init(numChannels: Int32, sampleRate: Int32) throws
+    func decode(audioData: Data) throws -> Data
 }
 
-public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
+public final class OpusDecoder: OpusDecoderProtocol {
 
-    public var pcmDataWithHeaders: Data = Data()             // object containing the decoded pcm data with wav headers
-
-    // swiftlint:disable:next type_name
-    private typealias opus_decoder = OpaquePointer
-    // swiftlint:disable:next identifier_name
+    /// object containing the decoded pcm data with wav headers
+    private var pcmDataWithHeaders = Data()
+    
+    typealias opus_decoder = OpaquePointer
     private let MAX_FRAME_SIZE = Int32(960 * 6)
 
-    private var streamState: ogg_stream_state   // state of ogg stream
-    private var page: ogg_page                  // encapsulates the data for an Ogg page
-    private var syncState: ogg_sync_state       // tracks the status of data during decoding
-    private var packet: ogg_packet              // packet within a stream passing information
-    private var header: OpusHeader              // header of the Opus file to decode
-    private var decoder: opus_decoder           // decoder to convert opus to pcm
+    /// state of ogg stream
+    private var streamState: ogg_stream_state
+    /// encapsulates the data for an Ogg page
+    private var page: ogg_page
+    /// tracks the status of data during decoding
+    private var syncState: ogg_sync_state
+    /// packet within a stream passing information
+    private var packet: ogg_packet
+    /// header of the Opus file to decode
+    private var header: OpusHeader
+    /// decoder to convert opus to pcm
+    private var decoder: opus_decoder
 
-    private var packetCount: Int64 = 0          // number of packets read during decoding
-    private var beginStream = true              // if decoding of stream has begun
-    private var pageGranulePosition: Int64 = 0  // position of the packet data at page
-    private var hasOpusStream = false           // whether or not the opus stream has been created
-    private var hasTagsPacket = false           // whether or not the tags packet has been read
-    private var opusSerialNumber: Int = 0       // the assigned serial number of the opus stream
-    private var linkOut: Int32 = 0              // total number of bytes written from opus stream to pcmData
-    private var totalLinks: Int = 0             // a count of the number of opus streams
-    private var numChannels: Int32 = 1          // number of channels
+    /// number of packets read during decoding
+    private var packetCount: Int64 = 0
+    /// if decoding of stream has begun
+    private var beginStream = true
+    /// position of the packet data at page
+    private var pageGranulePosition: Int64 = 0
+    /// whether or not the opus stream has been created
+    private var hasOpusStream = false
+    /// whether or not the tags packet has been read
+    private var hasTagsPacket = false
+    /// the assigned serial number of the opus stream
+    private var opusSerialNumber: Int = 0
+    /// total number of bytes written from opus stream to pcmData
+    private var linkOut: Int32 = 0
+    /// a count of the number of opus streams
+    private var totalLinks: Int = 0
+    /// Number of channels. Default value is 1
+    private var numChannels: Int32
     private var pcmDataBuffer = UnsafeMutablePointer<Float>.allocate(capacity: 0)
-    private var sampleRate: Int32 = 48000       // sample rate for decoding. default value by Opus is 48000
-    private var preSkip: Int32 = 0              // number of samples to be skipped at beginning of stream
-    private var granOffset: Int32 = 0           // where to begin reading the data from Opus
-    private var frameSize: Int32 = 0            // number of samples decoded
-    private var pcmData = Data()                // decoded pcm data
+    /// Sample rate for decoding. Default value by Opus is 48000. This must be one of 8000, 12000, 16000, 24000, or 48000.
+    private var sampleRate: Int32
+    /// number of samples to be skipped at beginning of stream
+    private var preSkip: Int32 = 0
+    /// where to begin reading the data from Opus
+    private var granOffset: Int32 = 0
+    /// number of samples decoded
+    private var frameSize: Int32 = 0
+    /// decoded pcm data
+    private var pcmData = Data()
 
-    public init(audioData: Data) throws {
+    public init(numChannels: Int32 = 1, sampleRate: Int32 = 48000) throws {
+        self.numChannels = numChannels
+        self.sampleRate = sampleRate
+        
         // set properties
         streamState = ogg_stream_state()
         page = ogg_page()
@@ -55,7 +77,16 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
         // status to catch errors when creating decoder
         var status = Int32(0)
         decoder = opus_decoder_create(sampleRate, numChannels, &status)
-
+        
+        guard let error = OpusError(rawValue: status) else {
+            throw OpusError.internalError
+        }
+        guard error == .okay else {
+            throw error
+        }
+    }
+    
+    public func decode(audioData: Data) throws -> Data {
         // initialize ogg sync state
         ogg_sync_init(&syncState)
         var processedByteCount = 0
@@ -105,7 +136,7 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
         }
 
         if totalLinks == 0 {
-            NSLog("Does not look like an opus file.")
+            print("Does not look like an opus file.")
             throw OpusError.invalidState
         }
 
@@ -118,10 +149,14 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
             ogg_stream_clear(&streamState)
         }
         ogg_sync_clear(&syncState)
+        
+        return pcmDataWithHeaders
     }
+}
 
-    // Extract a packet from the ogg stream and store the extracted data within the packet object.
-    private func extractPacket(_ streamState: inout ogg_stream_state, _ packet: inout ogg_packet) throws {
+private extension OpusDecoder {
+    /// Extract a packet from the ogg stream and store the extracted data within the packet object.
+    func extractPacket(_ streamState: inout ogg_stream_state, _ packet: inout ogg_packet) throws {
         // attempt to extract a packet from the ogg stream
         while ogg_stream_packetout(&streamState, &packet) == 1 {
             // execute if initial stream header
@@ -135,7 +170,7 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
                 // set properties if we are in a new opus stream
                 if !hasOpusStream {
                     if packetCount > 0 && opusSerialNumber == streamState.serialno {
-                        NSLog("Apparent chaining without changing serial number. Something bad happened.")
+                        print("Apparent chaining without changing serial number. Something bad happened.")
                         throw OpusError.internalError
                     }
                     opusSerialNumber = streamState.serialno
@@ -145,7 +180,7 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
                     packetCount = 0
                     totalLinks += 1
                 } else {
-                    NSLog("Warning: ignoring opus stream.")
+                    print("Warning: ignoring opus stream.")
                 }
             }
 
@@ -156,7 +191,7 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
             // if first packet in logical stream, process header
             if packetCount == 0 {
                 // create decoder from information in Opus header
-                decoder = try processHeader(&packet, &numChannels, &preSkip)
+                decoder = try processHeader(packet: &packet, channels: &numChannels, preskip: &preSkip)
 
                 // Check that there are no more packets in the first page.
                 let lastElementIndex = page.header_len - 1
@@ -180,7 +215,7 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
                 let lastElementIndex = page.header_len - 1
                 let lacingValue = page.header[lastElementIndex]
                 if ogg_stream_packetout(&streamState, &packet) != 0 || lacingValue == 255 {
-                    NSLog("Extra packets on initial tags page. Invalid stream.")
+                    print("Extra packets on initial tags page. Invalid stream.")
                     throw OpusError.invalidPacket
                 }
             } else {
@@ -192,7 +227,7 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
                 numberOfSamplesDecoded = opus_multistream_decode_float(decoder, packet.packet, Int32(packet.bytes), pcmDataBuffer, MAX_FRAME_SIZE, 0)
 
                 if numberOfSamplesDecoded < 0 {
-                    NSLog("Decoding error: \(String(describing: opus_strerror(numberOfSamplesDecoded)))")
+                    print("Decoding error: \(String(describing: opus_strerror(numberOfSamplesDecoded)))")
                     throw OpusError.internalError
                 }
 
@@ -201,7 +236,7 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
                 // Make sure the output duration follows the final end-trim
                 // Output sample count should not be ahead of granpos value.
                 maxOut = ((pageGranulePosition - Int64(granOffset)) * Int64(sampleRate) / 48000) - Int64(linkOut)
-                outSample = try audioWrite(&pcmDataBuffer, numChannels, frameSize, &preSkip, &maxOut)
+                outSample = try audioWrite(pcmDataBuffer: &pcmDataBuffer, channels: numChannels, frameSize: frameSize, skip: &preSkip, maxOut: &maxOut)
 
                 linkOut += Int32(outSample)
             }
@@ -209,9 +244,9 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
         }
 
     }
-
-    // Process the Opus header and create a decoder with these values
-    private func processHeader(_ packet: inout ogg_packet, _ channels: inout Int32, _ preskip: inout Int32) throws -> opus_decoder {
+    
+    /// Process the Opus header and create a decoder with these values
+    func processHeader(packet: inout ogg_packet, channels: inout Int32, preskip: inout Int32) throws -> opus_decoder {
         // create status to capture errors
         var status = Int32(0)
 
@@ -234,13 +269,15 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
         }
         return decoder
     }
-
-    // Write the decoded Opus data (now PCM) to the pcmData object
-    private func audioWrite(_ pcmDataBuffer: inout UnsafeMutablePointer<Float>,
-                            _ channels: Int32,
-                            _ frameSize: Int32,
-                            _ skip: inout Int32,
-                            _ maxOut: inout Int64) throws -> Int64 {
+    
+    /// Write the decoded Opus data (now PCM) to the pcmData object
+    func audioWrite(
+        pcmDataBuffer: inout UnsafeMutablePointer<Float>,
+        channels: Int32,
+        frameSize: Int32,
+        skip: inout Int32,
+        maxOut: inout Int64
+    ) throws -> Int64 {
         var sampOut: Int64 = 0
         var tmpSkip: Int32
         var outLength: UInt
@@ -282,10 +319,10 @@ public final class TextToSpeechDecoder: TextToSpeechDecoderProtocol {
 
         return sampOut
     }
-
-    // Add WAV headers to the decoded PCM data.
-    // Refer to the documentation here for details: http://soundfile.sapp.org/doc/WaveFormat/
-    private func addWAVHeader() {
+    
+    /// Add WAV headers to the decoded PCM data.
+    /// Refer to the documentation here for details: http://soundfile.sapp.org/doc/WaveFormat/
+    func addWAVHeader() {
         var header = Data()
         let headerSize = 44
         let pcmDataLength = pcmData.count
