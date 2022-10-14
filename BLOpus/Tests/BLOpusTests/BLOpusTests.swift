@@ -10,8 +10,19 @@ final class BLOpusTests: XCTestCase {
         let frameSize: UInt32 = pcmData.count.calculateFrameSize(forFrame: 960)
         
         // When
-        let opusData = try BLOpus.encode(pcmData: pcmData, sampleRate: sampleRate, frameSize: frameSize)
-        let pcmDecodedData = try BLOpus.decode(opusData: opusData, sampleRate: sampleRate)
+        let opusData = try BLOpus.encode(
+            pcmData: pcmData,
+            pcmRate: sampleRate,
+            pcmChannels: 1,
+            frameSize: frameSize,
+            opusRate: sampleRate,
+            application: .audio
+        )
+        let pcmDecodedData = try BLOpus.decode(
+            opusData: opusData,
+            numChannels: 1,
+            sampleRate: sampleRate
+        )
         
         print("originalPcmData.count: \(pcmData.count) vs opus.count: \(opusData.count)")
         print("pcmDecodedData.count: \(pcmDecodedData.count)")
