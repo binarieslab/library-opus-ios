@@ -9,7 +9,6 @@ import Foundation
 
 public protocol OpusEncoderProtocol {
     func encode(pcm: Data) throws
-    func encode(pcm: UnsafePointer<Int16>, count: Int) throws
     func bitstream(flush: Bool, fillBytes: Int32?) -> Data
     func endstream(fillBytes: Int32?) throws -> Data
 }
@@ -88,14 +87,63 @@ public final class OpusEncoder: OpusEncoderProtocol {
     }
     
     public func encode(pcm: Data) throws {
-        try pcm.withUnsafeBytes { (bytes: UnsafePointer<Int16>) in
-            try encode(pcm: bytes, count: pcm.count)
+        guard let inputDataBytes = pcm.withUnsafeBytes({ $0.baseAddress?.assumingMemoryBound(to: Int16.self) }) else {
+            throw OpusError.allocationFailure
         }
-        
-        // try encode(pcm: pcm.bytes, bytes: pcm.length)
+        try encode(pcm: inputDataBytes, count: pcm.count)
     }
     
-    public func encode(pcm: UnsafePointer<Int16>, count: Int) throws {
+    public func bitstream(flush: Bool = false, fillBytes: Int32? = nil) -> Data {
+        assemblePages(flush: flush, fillBytes: fillBytes)
+        let bitstream = oggCache
+        oggCache = Data()
+        return bitstream
+    }
+    
+    public func endstream(fillBytes: Int32? = nil) throws -> Data {
+        // compute granule position using cache
+        let pcmFrames = pcmCache.count / Int(pcmBytesPerFrame)
+        granulePosition += Int64(pcmFrames * 48000 / Int(opusRate))
+        
+        // add padding to cache to construct complete frame
+        let toAppend = Int(frameSize) * Int(pcmBytesPerFrame) - pcmCache.count
+        let padding = [UInt8](repeating: 0, count: toAppend)
+        pcmCache.append(padding, count: toAppend)
+        
+        // encode an opus frame
+        var opus = [UInt8](repeating: 0, count: Int(maxFrameSize))
+        guard let cache = pcmCache.withUnsafeBytes({ $0.baseAddress?.assumingMemoryBound(to: Int16.self) }) else {
+            throw OpusError.allocationFailure
+        }
+        let numBytes = opus_encode(encoder, cache, frameSize, &opus, maxFrameSize)
+        guard numBytes >= 0 else {
+            throw OpusError.internalError
+        }
+        
+        // construct ogg packet with opus frame
+        let packetPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: opus.count)
+        packetPointer.initialize(from: &opus, count: opus.count)
+        var packet = ogg_packet()
+        packet.packet = packetPointer
+        packet.bytes = Int(numBytes)
+        packet.b_o_s = 0
+        packet.e_o_s = 1
+        packet.granulepos = granulePosition
+        packet.packetno = Int64(packetNumber)
+        packetNumber += 1
+        
+        // add packet to ogg stream
+        let status = ogg_stream_packetin(&stream, &packet)
+        guard status == 0 else {
+            throw OggError.internalError
+        }
+        
+        return bitstream(flush: true)
+    }
+}
+
+private extension OpusEncoder {
+    func encode(pcm: UnsafePointer<Int16>, count: Int) throws {
         // ensure we have complete pcm frames
         guard UInt32(count) % pcmBytesPerFrame == 0 else {
             throw OpusError.internalError
@@ -119,9 +167,11 @@ public final class OpusEncoder: OpusEncoderProtocol {
             }
             
             // construct ogg packet with opus frame
+            let packetPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: opus.count)
+            packetPointer.initialize(from: &opus, count: opus.count)
             var packet = ogg_packet()
             granulePosition += Int64(frameSize * 48000 / opusRate)
-            packet.packet = UnsafeMutablePointer<UInt8>(mutating: opus)
+            packet.packet = packetPointer
             packet.bytes = Int(numBytes)
             packet.b_o_s = 0
             packet.e_o_s = 0
@@ -147,54 +197,6 @@ public final class OpusEncoder: OpusEncoderProtocol {
         }
     }
     
-    public func bitstream(flush: Bool = false, fillBytes: Int32? = nil) -> Data {
-        assemblePages(flush: flush, fillBytes: fillBytes)
-        let bitstream = oggCache
-        oggCache = Data()
-        return bitstream
-    }
-    
-    public func endstream(fillBytes: Int32? = nil) throws -> Data {
-        // compute granule position using cache
-        let pcmFrames = pcmCache.count / Int(pcmBytesPerFrame)
-        granulePosition += Int64(pcmFrames * 48000 / Int(opusRate))
-        
-        // add padding to cache to construct complete frame
-        let toAppend = Int(frameSize) * Int(pcmBytesPerFrame) - pcmCache.count
-        let padding = [UInt8](repeating: 0, count: toAppend)
-        pcmCache.append(padding, count: toAppend)
-        
-        // encode an opus frame
-        var opus = [UInt8](repeating: 0, count: Int(maxFrameSize))
-        var numBytes: opus_int32 = 0
-        try pcmCache.withUnsafeBytes { (cache: UnsafePointer<Int16>) in
-            numBytes = opus_encode(encoder, cache, frameSize, &opus, maxFrameSize)
-            guard numBytes >= 0 else {
-                throw OpusError.internalError
-            }
-        }
-        
-        // construct ogg packet with opus frame
-        var packet = ogg_packet()
-        packet.packet = UnsafeMutablePointer<UInt8>(mutating: opus)
-        packet.bytes = Int(numBytes)
-        packet.b_o_s = 0
-        packet.e_o_s = 1
-        packet.granulepos = granulePosition
-        packet.packetno = Int64(packetNumber)
-        packetNumber += 1
-        
-        // add packet to ogg stream
-        let status = ogg_stream_packetin(&stream, &packet)
-        guard status == 0 else {
-            throw OggError.internalError
-        }
-        
-        return bitstream(flush: true)
-    }
-}
-
-private extension OpusEncoder {
     func addOpusHeader(channels: UInt8, rate: UInt32) throws {
         // construct opus header
         let header = Header(
@@ -286,18 +288,20 @@ private extension OpusEncoder {
         
         // encode an opus frame
         var opus = [UInt8](repeating: 0, count: Int(maxFrameSize))
-        var numBytes: opus_int32 = 0
-        try pcmCache.withUnsafeBytes { (cache: UnsafePointer<Int16>) in
-            numBytes = opus_encode(encoder, cache, frameSize, &opus, maxFrameSize)
-            guard numBytes >= 0 else {
-                throw OpusError.internalError
-            }
+        guard let cache = pcmCache.withUnsafeBytes({ $0.baseAddress?.assumingMemoryBound(to: Int16.self) }) else {
+            throw OpusError.allocationFailure
+        }
+        let numBytes = opus_encode(encoder, cache, frameSize, &opus, maxFrameSize)
+        guard numBytes >= 0 else {
+            throw OpusError.internalError
         }
         
         // construct ogg packet with opus frame
+        let packetPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: opus.count)
+        packetPointer.initialize(from: &opus, count: opus.count)
         var packet = ogg_packet()
         granulePosition += Int64(frameSize * 48000 / opusRate)
-        packet.packet = UnsafeMutablePointer<UInt8>(mutating: opus)
+        packet.packet = packetPointer
         packet.bytes = Int(numBytes)
         packet.b_o_s = 0
         packet.e_o_s = 0
