@@ -23,12 +23,15 @@ final class OpusSwiftTests: XCTestCase {
         let pcmData = TestUtils.pcmfile.data
         let pcmRate: Int32 = 48000
         let pcmChannels: Int32 = 1
-        let frameSize: UInt32 = pcmData.count.calculateFrameSize(forOriginalFrame: 960)
+        let frameSize: UInt32 = 1
         let opusRate: Int32 = 48000
         
         // When
         let encoder = try OpusEncoder(pcmRate: pcmRate, pcmChannels: pcmChannels, pcmBytesPerFrame: frameSize, opusRate: opusRate, application: .audio)
-        let encodedData = try encoder.encode(pcm: pcmData) // TODO !!!
+        try encoder.encode(pcm: pcmData)
+        let encodedData = try encoder.endstream()
+        
+        print(encodedData.count)
         
         // Expected
         let encodedURL = TestUtils.pcmfile.url
@@ -58,27 +61,30 @@ final class OpusSwiftTests: XCTestCase {
     
     func testDecoder_whenWrongAudioIsGiven_shouldThrowError() throws {
     }
-}
-
-private extension Int {
-    func calculateFrameSize(forOriginalFrame frame: UInt32) -> UInt32 {
-        var upperPcmBytesPerFrame = frame
-        while true {
-            if UInt32(self) % upperPcmBytesPerFrame == 0 {
-                return upperPcmBytesPerFrame
-            }
-            if upperPcmBytesPerFrame < UInt32(self) {
-                break
-            }
-            upperPcmBytesPerFrame += 1
-        }
+    
+    func testEncoderDecoder_whenValudAudioIsGiven_shouldEncodeDecodeCorretly() throws {
+        // Given
+        let pcmData = TestUtils.pcmfile.data
+        let pcmRate: Int32 = 48000
+        let pcmChannels: Int32 = 1
+        let frameSize: UInt32 = 1
+        let opusRate: Int32 = 48000
+        let decodeNumChannels: Int32 = 1
+        let decodeSampleRate: Int32 = 48000
         
-        var downerPcmBytesPerFrame = frame
-        while true {
-            if UInt32(self) % downerPcmBytesPerFrame == 0 {
-                return downerPcmBytesPerFrame
-            }
-            downerPcmBytesPerFrame -= 1
-        }
+        // When
+        let encoder = try OpusEncoder(pcmRate: pcmRate, pcmChannels: pcmChannels, pcmBytesPerFrame: frameSize, opusRate: opusRate, application: .audio)
+        try encoder.encode(pcm: pcmData)
+        let encodedData = try encoder.endstream()
+        let decoder = try OpusDecoder(numChannels: decodeNumChannels, sampleRate: decodeSampleRate)
+        let decodedData = try decoder.decode(audioData: encodedData)
+        
+        
+        
+        let decodedURL = TestUtils.pcmfile.url
+            .deletingLastPathComponent()
+            .appendingPathComponent("finaldecoded.wav")
+        try decodedData.write(to: decodedURL)
+        
     }
 }
