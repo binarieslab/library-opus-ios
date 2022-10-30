@@ -47,6 +47,7 @@
 		C0D9EDE4290BA4B500E92F5A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D9EDE3290BA4B500E92F5A /* TestUtils.swift */; };
 		C0D9EDE9290BA78400E92F5A /* opusfile.ogg in Resources */ = {isa = PBXBuildFile; fileRef = C0D9EDE8290BA78400E92F5A /* opusfile.ogg */; };
 		C0D9EDED290BA8A800E92F5A /* pcmfile.wav in Resources */ = {isa = PBXBuildFile; fileRef = C0D9EDEC290BA8A800E92F5A /* pcmfile.wav */; };
+		C0D9EDEF290D5F6500E92F5A /* test.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C0D9EDEE290D5F6500E92F5A /* test.m4a */; };
 		C0E2E6F128F97C2F00906756 /* OpusEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2E6F028F97C2F00906756 /* OpusEncoder.swift */; };
 		C0E2E6F328F97C4000906756 /* OpusDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2E6F228F97C4000906756 /* OpusDecoder.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		C0D9EDE3290BA4B500E92F5A /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		C0D9EDE8290BA78400E92F5A /* opusfile.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = opusfile.ogg; sourceTree = "<group>"; };
 		C0D9EDEC290BA8A800E92F5A /* pcmfile.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pcmfile.wav; sourceTree = "<group>"; };
+		C0D9EDEE290D5F6500E92F5A /* test.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.m4a; sourceTree = "<group>"; };
 		C0E2E6F028F97C2F00906756 /* OpusEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpusEncoder.swift; sourceTree = "<group>"; };
 		C0E2E6F228F97C4000906756 /* OpusDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpusDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D9EDEC290BA8A800E92F5A /* pcmfile.wav */,
+				C0D9EDEE290D5F6500E92F5A /* test.m4a */,
 				C0D9EDE8290BA78400E92F5A /* opusfile.ogg */,
 			);
 			path = Resources;
@@ -376,6 +379,7 @@
 			files = (
 				C0D9EDE9290BA78400E92F5A /* opusfile.ogg in Resources */,
 				C0D9EDED290BA8A800E92F5A /* pcmfile.wav in Resources */,
+				C0D9EDEF290D5F6500E92F5A /* test.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,11 +12,13 @@ private final class TestUtilsClass {}
 enum TestUtils: String {
     case opusfile
     case pcmfile
+    case test
     
     var fileExtension: String? {
         switch self {
         case .opusfile: return "ogg"
         case .pcmfile: return "wav"
+        case .test: return "m4a"
         }
     }
 
