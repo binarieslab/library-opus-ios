@@ -44,10 +44,11 @@
 		C0A483CF28F88F09005E3826 /* ogg.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A483C728F88F09005E3826 /* ogg.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0A483D028F88F09005E3826 /* config_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A483C828F88F09005E3826 /* config_types.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0A483D128F88F09005E3826 /* os_types.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A483C928F88F09005E3826 /* os_types.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0BC7801291304950036EFF0 /* OpusHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = C0BC77FF291304950036EFF0 /* OpusHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0BC7802291304950036EFF0 /* OpusHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BC7800291304950036EFF0 /* OpusHelper.m */; };
 		C0D9EDE4290BA4B500E92F5A /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D9EDE3290BA4B500E92F5A /* TestUtils.swift */; };
 		C0D9EDE9290BA78400E92F5A /* opusfile.ogg in Resources */ = {isa = PBXBuildFile; fileRef = C0D9EDE8290BA78400E92F5A /* opusfile.ogg */; };
 		C0D9EDED290BA8A800E92F5A /* pcmfile.wav in Resources */ = {isa = PBXBuildFile; fileRef = C0D9EDEC290BA8A800E92F5A /* pcmfile.wav */; };
-		C0D9EDEF290D5F6500E92F5A /* test.m4a in Resources */ = {isa = PBXBuildFile; fileRef = C0D9EDEE290D5F6500E92F5A /* test.m4a */; };
 		C0E2E6F128F97C2F00906756 /* OpusEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2E6F028F97C2F00906756 /* OpusEncoder.swift */; };
 		C0E2E6F328F97C4000906756 /* OpusDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2E6F228F97C4000906756 /* OpusDecoder.swift */; };
 /* End PBXBuildFile section */
@@ -93,10 +94,11 @@
 		C0B4DE4428F683090066468E /* libogg-macos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libogg-macos.a"; sourceTree = "<group>"; };
 		C0B4DE4528F683090066468E /* libopus-macos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopus-macos.a"; sourceTree = "<group>"; };
 		C0B4DE4628F683090066468E /* libogg-watchos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libogg-watchos.a"; sourceTree = "<group>"; };
+		C0BC77FF291304950036EFF0 /* OpusHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpusHelper.h; sourceTree = "<group>"; };
+		C0BC7800291304950036EFF0 /* OpusHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpusHelper.m; sourceTree = "<group>"; };
 		C0D9EDE3290BA4B500E92F5A /* TestUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		C0D9EDE8290BA78400E92F5A /* opusfile.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = opusfile.ogg; sourceTree = "<group>"; };
 		C0D9EDEC290BA8A800E92F5A /* pcmfile.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pcmfile.wav; sourceTree = "<group>"; };
-		C0D9EDEE290D5F6500E92F5A /* test.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.m4a; sourceTree = "<group>"; };
 		C0E2E6F028F97C2F00906756 /* OpusEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpusEncoder.swift; sourceTree = "<group>"; };
 		C0E2E6F228F97C4000906756 /* OpusDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpusDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,7 +237,6 @@
 			isa = PBXGroup;
 			children = (
 				C0D9EDEC290BA8A800E92F5A /* pcmfile.wav */,
-				C0D9EDEE290D5F6500E92F5A /* test.m4a */,
 				C0D9EDE8290BA78400E92F5A /* opusfile.ogg */,
 			);
 			path = Resources;
@@ -260,6 +261,8 @@
 				C00A67F028F9D53D004B566E /* OpusError.swift */,
 				C00A67F228F9D621004B566E /* OggError.swift */,
 				C00A67F428F9D675004B566E /* OpusApplication.swift */,
+				C0BC77FF291304950036EFF0 /* OpusHelper.h */,
+				C0BC7800291304950036EFF0 /* OpusHelper.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				C0A483CD28F88F09005E3826 /* opus_defines.h in Headers */,
 				C0A483CC28F88F09005E3826 /* opus_types.h in Headers */,
+				C0BC7801291304950036EFF0 /* OpusHelper.h in Headers */,
 				C0A483CA28F88F09005E3826 /* opus.h in Headers */,
 				C0A483CF28F88F09005E3826 /* ogg.h in Headers */,
 				C0A483CE28F88F09005E3826 /* opus_projection.h in Headers */,
@@ -379,7 +383,6 @@
 			files = (
 				C0D9EDE9290BA78400E92F5A /* opusfile.ogg in Resources */,
 				C0D9EDED290BA8A800E92F5A /* pcmfile.wav in Resources */,
-				C0D9EDEF290D5F6500E92F5A /* test.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +420,7 @@
 				C08FA3D328DCF8FB00BFB1BA /* OpusSwift.docc in Sources */,
 				C0E2E6F328F97C4000906756 /* OpusDecoder.swift in Sources */,
 				C00A67F528F9D675004B566E /* OpusApplication.swift in Sources */,
+				C0BC7802291304950036EFF0 /* OpusHelper.m in Sources */,
 				C0A4839E28F88ECD005E3826 /* opus_header.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

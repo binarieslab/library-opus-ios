@@ -20,6 +20,8 @@ public final class OpusEncoder: OpusEncoderProtocol {
     
     private typealias opus_encoder = OpaquePointer
     
+    private let opusHelper = OpusHelper()
+    
     /// state of the ogg stream
     private var stream: ogg_stream_state
     /// encoder to convert pcm to opus
@@ -31,7 +33,7 @@ public final class OpusEncoder: OpusEncoderProtocol {
     /// number of pcm frames to encode in an opus frame (20ms)
     private let frameSize: Int32
     /// maximum size of an opus frame
-    private let maxFrameSize: Int32 = 3832
+    private var maxFrameSize: Int32 { 6 * frameSize }
     /// desired sample rate of the opus audio
     private let opusRate: Int32
     /// bytes per frame in the pcm audio
@@ -75,6 +77,13 @@ public final class OpusEncoder: OpusEncoderProtocol {
         guard error == .okay else {
             throw error
         }
+        
+//        opusHelper.setComplexity(UInt(10), encoder: encoder)
+//        opusHelper.setSignal(UInt(OPUS_SIGNAL_VOICE), encoder: encoder)
+//        opusHelper.setPacketLossPerc(UInt(1), encoder: encoder)
+//        opusHelper.setInBandFec(UInt(1), encoder: encoder)
+//        opusHelper.setBandwidth(UInt(OPUS_BANDWIDTH_NARROWBAND), encoder: encoder)
+//        opusHelper.setFrameSize(UInt(OPUS_FRAMESIZE_20_MS), encoder: encoder)
         
         // add opus headers to ogg stream
         try addOpusHeader(channels: UInt8(pcmChannels), rate: UInt32(pcmRate))
