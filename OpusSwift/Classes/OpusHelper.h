@@ -54,6 +54,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Use 120 ms frames - OPUS_FRAMESIZE_120_MS: 5009
 - (void)setFrameSize:(NSUInteger)frameSize encoder:(OpusEncoder *)encoder;
 
+- (void)setLsbDepth:(NSUInteger)lsbDepth encoder:(OpusEncoder *)encoder;
+
 @end
 
 NS_ASSUME_NONNULL_END

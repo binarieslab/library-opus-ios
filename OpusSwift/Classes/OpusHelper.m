@@ -74,4 +74,13 @@
     });
 }
 
+- (void)setLsbDepth:(NSUInteger)lsbDepth encoder:(OpusEncoder *)encoder
+{
+    dispatch_async(self.processingQueue, ^{
+        opus_encoder_ctl(encoder, OPUS_SET_LSB_DEPTH(lsbDepth));
+    });
+}
+
+
+
 @end

@@ -21,10 +21,10 @@ final class OpusSwiftTests: XCTestCase {
     func testEncoder_whenValidAudioIsGiven_shouldEncodeNewFormat() throws {
         // Given
         let pcmData = TestUtils.pcmfile.data
-        let pcmRate: Int32 = 48000
+        let pcmRate: Int32 = 24000
         let pcmChannels: Int32 = 1
         let bytesPerFrame: UInt32 = 1
-        let opusRate: Int32 = 48000
+        let opusRate: Int32 = 24000
         
         // When
         let encoder = try OpusEncoder(pcmRate: pcmRate, pcmChannels: pcmChannels, pcmBytesPerFrame: bytesPerFrame, opusRate: opusRate, application: .audio)

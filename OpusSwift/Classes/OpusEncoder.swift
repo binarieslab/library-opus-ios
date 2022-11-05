@@ -53,7 +53,7 @@ public final class OpusEncoder: OpusEncoderProtocol {
         // set properties
         self.granulePosition = 0
         self.packetNumber = 0
-        self.frameSize = Int32(960 / (48000 / opusRate))
+        self.frameSize = Int32(960 / (24000 / opusRate))
         self.opusRate = opusRate
         self.pcmBytesPerFrame = pcmBytesPerFrame
         self.pcmCache = Data()
@@ -78,12 +78,7 @@ public final class OpusEncoder: OpusEncoderProtocol {
             throw error
         }
         
-//        opusHelper.setComplexity(UInt(10), encoder: encoder)
-//        opusHelper.setSignal(UInt(OPUS_SIGNAL_VOICE), encoder: encoder)
-//        opusHelper.setPacketLossPerc(UInt(1), encoder: encoder)
-//        opusHelper.setInBandFec(UInt(1), encoder: encoder)
-//        opusHelper.setBandwidth(UInt(OPUS_BANDWIDTH_NARROWBAND), encoder: encoder)
-//        opusHelper.setFrameSize(UInt(OPUS_FRAMESIZE_20_MS), encoder: encoder)
+        opusHelper.setFrameSize(UInt(OPUS_FRAMESIZE_20_MS), encoder: encoder)
         
         // add opus headers to ogg stream
         try addOpusHeader(channels: UInt8(pcmChannels), rate: UInt32(pcmRate))
@@ -112,7 +107,7 @@ public final class OpusEncoder: OpusEncoderProtocol {
     public func endstream(fillBytes: Int32? = nil) throws -> Data {
         // compute granule position using cache
         let pcmFrames = pcmCache.count / Int(pcmBytesPerFrame)
-        granulePosition += Int64(pcmFrames * 48000 / Int(opusRate))
+        granulePosition += Int64(pcmFrames * 24000 / Int(opusRate))
         
         // add padding to cache to construct complete frame
         let toAppend = Int(frameSize) * Int(pcmBytesPerFrame) - pcmCache.count
@@ -179,7 +174,7 @@ private extension OpusEncoder {
             let packetPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: opus.count)
             packetPointer.initialize(from: &opus, count: opus.count)
             var packet = ogg_packet()
-            granulePosition += Int64(frameSize * 48000 / opusRate)
+            granulePosition += Int64(frameSize * 24000 / opusRate)
             packet.packet = packetPointer
             packet.bytes = Int(numBytes)
             packet.b_o_s = 0
@@ -309,7 +304,7 @@ private extension OpusEncoder {
         let packetPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: opus.count)
         packetPointer.initialize(from: &opus, count: opus.count)
         var packet = ogg_packet()
-        granulePosition += Int64(frameSize * 48000 / opusRate)
+        granulePosition += Int64(frameSize * 24000 / opusRate)
         packet.packet = packetPointer
         packet.bytes = Int(numBytes)
         packet.b_o_s = 0
