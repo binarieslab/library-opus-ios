@@ -1,1 +1,3 @@
-# library-opus-ios
+# BLOpus
+
+A description of this package.

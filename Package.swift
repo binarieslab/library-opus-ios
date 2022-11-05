@@ -14,7 +14,7 @@ let testResources: [Resource] = [
 ]
 let targets: [Target] = [
     .target(name: "BLOpus", dependencies: []),
-    .binaryTarget(name: "OpusSwift", path: "../Framework/OpusSwift.xcframework"),
+    .binaryTarget(name: "OpusSwift", path: "Framework/OpusSwift.xcframework"),
     .testTarget(name: "BLOpusTests", dependencies: ["BLOpus"], resources: testResources)
 ]
 let package = Package(
